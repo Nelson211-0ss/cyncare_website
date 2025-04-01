@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about CynCare's mission, values, and commitment to transforming healthcare staffing">
+    <title>About Us | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .bg-pattern {
+            background-image: 
+                linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377),
+                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[60vh] flex items-center">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/about-hero.jpg" alt="Healthcare Team" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/90 to-dark/80"></div>
+                <div class="absolute inset-0 bg-pattern opacity-10"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
+                        Transforming Healthcare
+                        <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Staffing</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="100">
+                        We're on a mission to revolutionize healthcare staffing through innovation, dedication, and a commitment to excellence.
+                    </p>
+                    <div class="flex justify-center gap-8 flex-wrap" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">10+</div>
+                            <p class="text-white/60">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">50+</div>
+                            <p class="text-white/60">Team Members</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">98%</div>
+                            <p class="text-white/60">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Mission -->
+                    <div class="space-y-6" data-aos="fade-right">
+                        <div class="inline-block bg-accent/10 px-4 py-2 rounded-full">
+                            <span class="text-dark font-semibold">Our Mission</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark">Connecting Excellence in Healthcare</h2>
+                        <p class="text-dark/70 leading-relaxed">
+                            At CynCare, our mission is to bridge the gap between healthcare facilities and qualified professionals, ensuring optimal patient care through innovative staffing solutions. We strive to create lasting partnerships that benefit both healthcare providers and facilities.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-check text-accent"></i>
+                                </div>
+                                <span class="text-dark/80">Quality-focused recruitment process</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-check text-accent"></i>
+                                </div>
+                                <span class="text-dark/80">Comprehensive credential verification</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-check text-accent"></i>
+                                </div>
+                                <span class="text-dark/80">24/7 support for clients and professionals</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Vision -->
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="inline-block bg-accent/10 px-4 py-2 rounded-full">
+                            <span class="text-dark font-semibold">Our Vision</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark">Leading the Future of Healthcare Staffing</h2>
+                        <p class="text-dark/70 leading-relaxed">
+                            We envision a healthcare ecosystem where finding the right professional or position is seamless, efficient, and reliable. Through technology and personalized service, we're building a future where healthcare staffing meets the evolving needs of modern healthcare delivery.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-robot text-2xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Innovation</h3>
+                                <p class="text-dark/70 text-sm">Leveraging technology for better matches</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-heart text-2xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Care</h3>
+                                <p class="text-dark/70 text-sm">Putting people first in everything we do</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Our Core Values</h2>
+                    <p class="text-xl text-dark/70" data-aos="fade-up" data-aos-delay="100">
+                        The principles that guide us in delivering exceptional healthcare staffing solutions
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-star text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Excellence</h3>
+                        <p class="text-dark/70">Committed to maintaining the highest standards in healthcare staffing</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-handshake text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Integrity</h3>
+                        <p class="text-dark/70">Operating with transparency and ethical business practices</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Innovation</h3>
+                        <p class="text-dark/70">Embracing new technologies to improve our services</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-users text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Community</h3>
+                        <p class="text-dark/70">Building strong relationships with healthcare partners</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Our Leadership Team</h2>
+                    <p class="text-xl text-dark/70" data-aos="fade-up" data-aos-delay="100">
+                        Meet the experienced professionals leading our mission to transform healthcare staffing
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <div class="absolute inset-0 bg-accent/20 rounded-full blur-xl"></div>
+                            <img src="images/team/leader1.jpg" alt="Team Member" class="w-48 h-48 object-cover rounded-full relative">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Sarah Johnson</h3>
+                        <p class="text-accent font-medium mb-4">Chief Executive Officer</p>
+                        <p class="text-dark/70">15+ years of healthcare management experience</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <div class="absolute inset-0 bg-accent/20 rounded-full blur-xl"></div>
+                            <img src="images/team/leader2.jpg" alt="Team Member" class="w-48 h-48 object-cover rounded-full relative">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Michael Chen</h3>
+                        <p class="text-accent font-medium mb-4">Chief Technology Officer</p>
+                        <p class="text-dark/70">Expert in healthcare technology solutions</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <div class="absolute inset-0 bg-accent/20 rounded-full blur-xl"></div>
+                            <img src="images/team/leader3.jpg" alt="Team Member" class="w-48 h-48 object-cover rounded-full relative">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Emily Martinez</h3>
+                        <p class="text-accent font-medium mb-4">Director of Operations</p>
+                        <p class="text-dark/70">Specialized in healthcare staffing operations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-dark to-gray-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-5"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center max-w-3xl mx-auto" data-aos="zoom-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Join Our Growing Network</h2>
+                    <p class="text-xl text-white/80 mb-8">Whether you're a healthcare professional or facility, we're here to help you succeed</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="/contact.html" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
+                            Get Started
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="/services.html" class="btn-secondary bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
+                            Our Services
+                            <i class="fas fa-info-circle ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html> 

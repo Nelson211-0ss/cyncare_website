@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Post healthcare job opportunities on CynCare - Connect with qualified medical professionals">
+    <title>Post a Job | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- Form Header -->
+            <div class="max-w-4xl mx-auto mb-12 text-center">
+                <h1 class="text-4xl font-bold mb-4">Post a Job Opening</h1>
+                <p class="text-dark/70">Connect with qualified healthcare professionals by posting your job opportunity.</p>
+            </div>
+
+            <!-- Job Posting Form -->
+            <form id="job-posting" class="max-w-4xl mx-auto space-y-8">
+                <!-- Facility Information -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-hospital text-accent"></i>
+                        Facility Information
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Facility Name
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Facility Type
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Select facility type</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="clinic">Clinic</option>
+                                <option value="nursing-home">Nursing Home</option>
+                                <option value="rehab">Rehabilitation Center</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Location
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" required placeholder="City, State" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Contact Email
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Details -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-briefcase text-accent"></i>
+                        Job Details
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Position Title
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Specialty Required
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select specialty</option>
+                                    <option value="rn-med-surg">RN - Medical/Surgical</option>
+                                    <option value="rn-icu">RN - ICU</option>
+                                    <option value="rn-er">RN - Emergency</option>
+                                    <option value="rn-or">RN - Operating Room</option>
+                                    <option value="rn-peds">RN - Pediatrics</option>
+                                    <option value="lpn">LPN</option>
+                                    <option value="cna">CNA</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Employment Type
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select employment type</option>
+                                    <option value="full-time">Full Time</option>
+                                    <option value="part-time">Part Time</option>
+                                    <option value="contract">Contract</option>
+                                    <option value="temporary">Temporary</option>
+                                    <option value="per-diem">Per Diem</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Shift Type
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select shift type</option>
+                                    <option value="day">Day (7am-7pm)</option>
+                                    <option value="night">Night (7pm-7am)</option>
+                                    <option value="mid">Mid (3pm-11pm)</option>
+                                    <option value="rotating">Rotating</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Experience Required
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Select required experience</option>
+                                <option value="entry">Entry Level (0-1 year)</option>
+                                <option value="junior">Junior (1-3 years)</option>
+                                <option value="mid">Mid-Level (3-5 years)</option>
+                                <option value="senior">Senior (5+ years)</option>
+                            </select>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Salary Range (Start)
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2">$</span>
+                                    <input type="number" required min="0" step="0.01" class="form-input w-full pl-8 pr-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Salary Range (End)
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2">$</span>
+                                    <input type="number" required min="0" step="0.01" class="form-input w-full pl-8 pr-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Required Certifications
+                                <span class="text-dark/60 font-normal">(Select all that apply)</span>
+                            </label>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>BLS</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>ACLS</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>PALS</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>NIH Stroke Scale</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>TNCC</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Description -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-file-alt text-accent"></i>
+                        Job Description
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Job Summary
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <textarea required rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none"></textarea>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Key Responsibilities
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <textarea required rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none" placeholder="- List key responsibilities&#10;- One responsibility per line"></textarea>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Required Qualifications
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <textarea required rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none" placeholder="- List required qualifications&#10;- One qualification per line"></textarea>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Benefits & Perks
+                            </label>
+                            <textarea rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none" placeholder="- List benefits and perks&#10;- One item per line"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center pt-4">
+                    <button type="submit" class="px-12 py-4 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg transition-all transform hover:scale-105 flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        Post Job
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+        });
+    </script>
+</body>
+</html> 

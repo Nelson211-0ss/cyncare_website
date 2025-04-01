@@ -1,0 +1,103 @@
+<!-- Header Component -->
+<header class="fixed w-full top-0 z-50">
+    <div class="bg-[#242733]">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <img src="cyncare-logo.png" alt="CynCare Logo" class="h-14 w-auto">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="/" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">Home</a>
+                    <a href="/about.html" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">About</a>
+                    <a href="/services.html" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">Services</a>
+                    <a href="/jobs.html" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">Jobs</a>
+                    <a href="/blog.html" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">Blog</a>
+                    <a href="/contact.html" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">Contact</a>
+                    <div class="h-6 w-px bg-white/10 mx-2"></div>
+                    <a href="/post-job.html" class="nav-link text-white/90 hover:text-accent transition-colors font-medium">Post a Job</a>
+                    <a href="/apply.html" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-6 py-2.5 rounded-lg transition-all transform hover:scale-105 font-semibold flex items-center">
+                        <span>Apply Now</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <a href="/apply.html" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-4 py-2 rounded-lg transition-all transform hover:scale-105 font-semibold flex items-center">
+                        <span>Apply Now</span>
+                    </a>
+                    <button class="text-white hover:text-accent transition-colors" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden bg-[#2c2f3d] rounded-lg mt-4 absolute left-4 right-4" id="mobile-menu">
+                <div class="py-4 px-4 space-y-3">
+                    <a href="/" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Home</a>
+                    <a href="/about.html" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">About</a>
+                    <a href="/services.html" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Services</a>
+                    <a href="/jobs.html" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Jobs</a>
+                    <a href="/blog.html" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Blog</a>
+                    <a href="/contact.html" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Contact</a>
+                    <div class="h-px bg-white/10 my-2"></div>
+                    <a href="/post-job.html" class="block text-white/90 hover:text-accent transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Post a Job</a>
+                    <a href="/apply.html" class="block text-accent hover:text-accent/80 transition-colors py-2 px-4 hover:bg-white/5 rounded-lg font-medium">Apply Now</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent"></div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') 
+                ? '<i class="fas fa-bars text-2xl"></i>' 
+                : '<i class="fas fa-times text-2xl"></i>';
+        });
+
+        // Add active state to current page
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('text-accent', 'font-semibold');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            }
+        });
+    </script>
+
+    <style>
+        .btn-primary {
+            box-shadow: 0 4px 6px -1px rgba(42, 245, 152, 0.2), 0 2px 4px -1px rgba(42, 245, 152, 0.1);
+        }
+        
+        @media (max-width: 1023px) {
+            #mobile-menu {
+                max-height: calc(100vh - 100px);
+                overflow-y: auto;
+            }
+        }
+    </style>
+</header>
+
+<!-- Spacer to prevent content from hiding under fixed header -->
+<div class="h-24"></div> 

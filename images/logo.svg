@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+    <!-- Medical Cross -->
+    <g transform="translate(25,25)">
+        <rect x="-8" y="-15" width="16" height="30" rx="3" fill="#2af598"/>
+        <rect x="-15" y="-8" width="30" height="16" rx="3" fill="#2af598"/>
+    </g>
+    
+    <!-- Company Name -->
+    <text x="50" y="32" font-family="Inter" font-weight="bold" font-size="24" fill="#242733">
+        Cyn<tspan fill="#2af598">Care</tspan>
+    </text>
+</svg> 

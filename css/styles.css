@@ -1,0 +1,63 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles */
+@layer base {
+    body {
+        @apply bg-white text-dark antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-6 py-3 rounded-lg font-medium transition-all inline-flex items-center justify-center;
+    }
+
+    .btn-primary {
+        @apply bg-accent text-dark hover:bg-opacity-90 hover:transform hover:scale-105 shadow-lg;
+    }
+
+    .btn-secondary {
+        @apply bg-dark text-white hover:bg-opacity-90 hover:transform hover:scale-105 shadow-lg;
+    }
+
+    .feature-card {
+        @apply bg-white p-8 rounded-xl shadow-lg transition-all hover:shadow-xl hover:transform hover:-translate-y-1;
+    }
+
+    .nav-link {
+        @apply text-white hover:text-accent transition-colors;
+    }
+
+    .section-padding {
+        @apply py-16 md:py-24;
+    }
+
+    .container {
+        @apply px-4 md:px-6 lg:px-8 mx-auto max-w-7xl;
+    }
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+} 

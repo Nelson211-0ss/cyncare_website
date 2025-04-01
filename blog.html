@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CynCare Blog - Insights and updates from the healthcare staffing industry">
+    <title>Blog | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-dark to-gray-900 py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center text-white" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Healthcare Staffing Insights</h1>
+                    <p class="text-xl text-white/80 max-w-2xl mx-auto">Stay updated with the latest trends, insights, and news from the healthcare staffing industry.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Featured Post -->
+                    <div class="col-span-1 md:col-span-2 lg:col-span-3" data-aos="fade-up">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all">
+                            <img src="images/blog/featured.jpg" alt="Featured Post" class="w-full h-96 object-cover group-hover:scale-105 transition-transform">
+                            <div class="p-8">
+                                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                                    <span><i class="far fa-calendar mr-2"></i>March 15, 2024</span>
+                                    <span><i class="far fa-user mr-2"></i>Admin</span>
+                                </div>
+                                <h2 class="text-2xl font-bold mb-4">The Future of Healthcare Staffing: AI and Human Touch</h2>
+                                <p class="text-gray-600 mb-6">Explore how artificial intelligence is transforming healthcare staffing while maintaining the essential human element in healthcare delivery.</p>
+                                <a href="/blog/future-healthcare-staffing" class="text-accent font-medium hover:underline inline-flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Posts -->
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all">
+                            <img src="images/blog/post1.jpg" alt="Blog Post" class="w-full h-48 object-cover group-hover:scale-105 transition-transform">
+                            <div class="p-6">
+                                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                                    <span><i class="far fa-calendar mr-2"></i>March 10, 2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Travel Nursing Trends in 2024</h3>
+                                <p class="text-gray-600 mb-6">Discover the latest trends shaping the travel nursing industry this year.</p>
+                                <a href="/blog/travel-nursing-trends" class="text-accent font-medium hover:underline inline-flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all">
+                            <img src="images/blog/post2.jpg" alt="Blog Post" class="w-full h-48 object-cover group-hover:scale-105 transition-transform">
+                            <div class="p-6">
+                                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                                    <span><i class="far fa-calendar mr-2"></i>March 5, 2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Healthcare Staff Retention Strategies</h3>
+                                <p class="text-gray-600 mb-6">Effective strategies for maintaining a stable and satisfied healthcare workforce.</p>
+                                <a href="/blog/staff-retention" class="text-accent font-medium hover:underline inline-flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all">
+                            <img src="images/blog/post3.jpg" alt="Blog Post" class="w-full h-48 object-cover group-hover:scale-105 transition-transform">
+                            <div class="p-6">
+                                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                                    <span><i class="far fa-calendar mr-2"></i>March 1, 2024</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Navigating Healthcare Certifications</h3>
+                                <p class="text-gray-600 mb-6">A comprehensive guide to essential certifications for healthcare professionals.</p>
+                                <a href="/blog/healthcare-certifications" class="text-accent font-medium hover:underline inline-flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12" data-aos="fade-up">
+                    <nav class="flex items-center gap-2">
+                        <a href="#" class="px-4 py-2 border rounded-lg hover:bg-accent hover:text-white transition-colors">Previous</a>
+                        <a href="#" class="px-4 py-2 border rounded-lg bg-accent text-white">1</a>
+                        <a href="#" class="px-4 py-2 border rounded-lg hover:bg-accent hover:text-white transition-colors">2</a>
+                        <a href="#" class="px-4 py-2 border rounded-lg hover:bg-accent hover:text-white transition-colors">3</a>
+                        <a href="#" class="px-4 py-2 border rounded-lg hover:bg-accent hover:text-white transition-colors">Next</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html> 

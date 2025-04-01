@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with CynCare Healthcare Staffing - We're here to help with all your healthcare staffing needs">
+    <title>Contact Us | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .bg-pattern {
+            background-image: 
+                linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377),
+                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+
+        .contact-card {
+            @apply bg-white rounded-2xl p-8 shadow-sm border border-dark/5 hover:shadow-lg transition-all duration-300;
+        }
+
+        .form-input {
+            @apply w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all duration-200;
+        }
+
+        /* Add custom styles for the select dropdown */
+        select.form-input {
+            @apply bg-white cursor-pointer;
+        }
+
+        /* Add custom styles for the checkbox */
+        input[type="checkbox"] {
+            @apply h-5 w-5 rounded border-2 border-gray-300 text-accent focus:ring-accent/20 cursor-pointer;
+        }
+
+        /* Add hover effect for form inputs */
+        .form-input:hover {
+            @apply border-gray-400;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[40vh] flex items-center">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/contact-hero.jpg" alt="Contact Us" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/90 to-dark/80"></div>
+                <div class="absolute inset-0 bg-pattern opacity-10"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
+                        Get in
+                        <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Touch</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                        We're here to help with all your healthcare staffing needs
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20 bg-white relative">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="space-y-8" data-aos="fade-right">
+                        <div class="bg-accent/5 rounded-2xl p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-2xl text-accent"></i>
+                                </div>
+                                <h2 class="text-3xl font-bold">Send us a Message</h2>
+                            </div>
+                            <p class="text-dark/70">Fill out the form below and we'll get back to you as soon as possible.</p>
+                        </div>
+                        <form id="contact-form" class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                            <div class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="name" class="block text-sm font-semibold text-dark">
+                                            Full Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative">
+                                            <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                            <input 
+                                                type="text" 
+                                                id="name" 
+                                                name="name" 
+                                                required 
+                                                class="form-input pl-10 bg-white" 
+                                            >
+                                        </div>
+                                        <p class="text-xs text-dark/60">Enter your full legal name</p>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="email" class="block text-sm font-semibold text-dark">
+                                            Email Address
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative">
+                                            <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email" 
+                                                required 
+                                                class="form-input pl-10 bg-white" 
+                                            >
+                                        </div>
+                                        <p class="text-xs text-dark/60">We'll never share your email with anyone else</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="phone" class="block text-sm font-semibold text-dark">
+                                        Phone Number
+                                        <span class="text-dark/60 font-normal">(Optional)</span>
+                                    </label>
+                                    <div class="relative">
+                                        <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                        <input 
+                                            type="tel" 
+                                            id="phone" 
+                                            name="phone" 
+                                            class="form-input pl-10 bg-white" 
+                                            pattern="[0-9()-\s]+"
+                                        >
+                                    </div>
+                                    <p class="text-xs text-dark/60">Include area code (e.g., 555-123-4567)</p>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="subject" class="block text-sm font-semibold text-dark">
+                                        Inquiry Type
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                    <div class="relative">
+                                        <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
+                                            <i class="fas fa-briefcase"></i>
+                                        </span>
+                                        <select id="subject" name="subject" required class="form-input pl-10 bg-white appearance-none">
+                                            <option value="" disabled selected>-- Select an inquiry type --</option>
+                                            <option value="permanent">Permanent Placement</option>
+                                            <option value="temporary">Temporary Staffing</option>
+                                            <option value="travel">Travel Nursing</option>
+                                            <option value="other">Other Inquiry</option>
+                                        </select>
+                                        <span class="absolute inset-y-0 right-4 flex items-center text-dark/40 pointer-events-none">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </div>
+                                    <p class="text-xs text-dark/60">Select the most relevant option for your inquiry</p>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="message" class="block text-sm font-semibold text-dark">
+                                        Message Details
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                    <div class="relative">
+                                        <span class="absolute top-4 left-4 text-dark/40">
+                                            <i class="fas fa-message"></i>
+                                        </span>
+                                        <textarea 
+                                            id="message" 
+                                            name="message" 
+                                            rows="6" 
+                                            required 
+                                            class="form-input pl-10 bg-white" 
+                                            minlength="10"
+                                        ></textarea>
+                                    </div>
+                                    <p class="text-xs text-dark/60">Please provide detailed information about your inquiry (minimum 10 characters)</p>
+                                </div>
+                                <div class="flex items-start gap-3 pt-4">
+                                    <input 
+                                        type="checkbox" 
+                                        id="consent" 
+                                        name="consent" 
+                                        required 
+                                        class="mt-1 h-4 w-4 rounded border-gray-300 text-accent focus:ring-accent/20"
+                                    >
+                                    <label for="consent" class="text-sm text-dark/70">
+                                        I agree to the <a href="/privacy" class="text-accent hover:underline">Privacy Policy</a> and consent to being contacted about my inquiry.
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                </div>
+                                <button 
+                                    type="submit" 
+                                    class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold py-4 px-8 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
+                                >
+                                    <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                                    <span>Submit Inquiry</span>
+                                </button>
+                                <div class="text-center space-y-2">
+                                    <p class="text-sm text-dark/60">
+                                        <span class="text-red-500">*</span> Required fields
+                                    </p>
+                                    <p class="text-xs text-dark/60">
+                                        Response time: Within 24-48 business hours
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8" data-aos="fade-left">
+                        <div class="bg-accent/5 rounded-2xl p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-info-circle text-2xl text-accent"></i>
+                                </div>
+                                <h2 class="text-3xl font-bold">Contact Information</h2>
+                            </div>
+                            <p class="text-dark/70">Reach out to us through any of these channels.</p>
+                        </div>
+                        <div class="grid gap-6">
+                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-2">Office Location</h3>
+                                        <p class="text-dark/70">123 Healthcare Avenue<br>Suite 456<br>San Francisco, CA 94105</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-phone-alt text-2xl text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-2">Phone Numbers</h3>
+                                        <p class="text-dark/70">
+                                            <a href="tel:+15551234567" class="hover:text-accent transition-colors">Main: (555) 123-4567</a><br>
+                                            <a href="tel:+18002962273" class="hover:text-accent transition-colors">Toll Free: 1-800-CYNCARE</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-envelope text-2xl text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-2">Email Addresses</h3>
+                                        <p class="text-dark/70">
+                                            <a href="mailto:info@cyncare.com" class="hover:text-accent transition-colors">General: info@cyncare.com</a><br>
+                                            <a href="mailto:support@cyncare.com" class="hover:text-accent transition-colors">Support: support@cyncare.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-clock text-2xl text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-2">Business Hours</h3>
+                                        <p class="text-dark/70">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Find Us</h2>
+                    <p class="text-dark/70" data-aos="fade-up" data-aos-delay="100">Visit our office to learn more about our services</p>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0637507774103!2d-122.39901868441007!3d37.78992847975525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807c23cc4ebb%3A0x1c5c46524764a58f!2s123%20Main%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1625147984540!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Form Submission Handler
+            $("#contact-form").on("submit", function(e) {
+                e.preventDefault();
+                // Add your form submission logic here
+                alert("Thank you for your message. We'll get back to you soon!");
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html> 

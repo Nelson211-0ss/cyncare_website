@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+    @apply bg-white text-dark;
+}
+
+/* Add spacing for fixed header */
+main {
+    @apply pt-20; /* Matches header height */
+}
+
+/* Custom animations */
+.transition-all {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+/* Custom container padding for mobile */
+.container {
+    @apply px-4 md:px-6 lg:px-8 mx-auto max-w-7xl;
+}
+
+/* Custom button styles */
+.btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all inline-flex items-center justify-center;
+}
+
+.btn-primary {
+    @apply bg-accent text-dark hover:bg-opacity-90 hover:transform hover:scale-105;
+}
+
+.btn-secondary {
+    @apply bg-dark text-white hover:bg-opacity-90 hover:transform hover:scale-105;
+}
+
+/* Card styles */
+.feature-card {
+    @apply bg-white p-6 rounded-xl shadow-lg transition-all hover:shadow-xl hover:transform hover:-translate-y-1;
+}
+
+/* Section styles */
+.section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4;
+}
+
+.section-subtitle {
+    @apply text-xl text-dark/70 mb-8 max-w-2xl mx-auto;
+}
+
+/* Form styles */
+.form-input {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-dark/10 focus:border-accent focus:ring-0 transition-all;
+}
+
+/* Custom gradient */
+.gradient-bg {
+    @apply bg-gradient-to-r from-accent to-accent/50;
+} 

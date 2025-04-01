@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CynCare - Modern healthcare staffing solutions connecting facilities with qualified medical professionals">
+    <title>CynCare | Modern Healthcare Staffing Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/hero-bg.jpg" alt="Healthcare Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/90 to-dark/80"></div>
+                <!-- Animated Pattern Overlay -->
+                <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Content -->
+                    <div class="text-white space-y-8" data-aos="fade-right">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                            Modern Healthcare
+                            <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Staffing Solutions</span>
+                        </h1>
+                        <p class="text-xl text-white/80 leading-relaxed">
+                            Connecting qualified healthcare professionals with facilities nationwide through innovative technology and personalized service. Find your next opportunity or the perfect staff for your facility.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="/apply.html" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold flex items-center group">
+                                <span>Search Jobs</span>
+                                <i class="fas fa-search ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="/services.html" class="btn-secondary bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold flex items-center group">
+                                <span>Our Services</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-8 pt-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-hospital text-accent text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">500+</h4>
+                                    <p class="text-white/60">Healthcare Facilities</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-user-md text-accent text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">5,000+</h4>
+                                    <p class="text-white/60">Professionals Placed</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-star text-accent text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">98%</h4>
+                                    <p class="text-white/60">Satisfaction Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="hidden lg:block relative" data-aos="fade-left">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-full filter blur-3xl"></div>
+                        <img src="images/hero-illustration.svg" alt="Healthcare Staffing" class="w-full relative animate-float">
+                        <!-- Trust Badges -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/5 backdrop-blur-lg rounded-2xl p-6 mx-8 transform translate-y-1/2">
+                            <div class="flex justify-between items-center gap-6">
+                                <div class="text-center">
+                                    <i class="fas fa-shield-alt text-accent text-2xl mb-2"></i>
+                                    <p class="text-white text-sm">Verified Professionals</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-clock text-accent text-2xl mb-2"></i>
+                                    <p class="text-white text-sm">24/7 Support</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-certificate text-accent text-2xl mb-2"></i>
+                                    <p class="text-white text-sm">Licensed & Certified</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 relative overflow-hidden bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose CynCare</h2>
+                    <p class="text-xl text-dark/70">Experience the future of healthcare staffing</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all">
+                            <i class="fas fa-bolt text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Fast Placement</h3>
+                        <p class="text-dark/70">Get matched with qualified healthcare professionals within 24-48 hours.</p>
+                    </div>
+                    <div class="feature-card group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all">
+                            <i class="fas fa-shield-alt text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Verified Professionals</h3>
+                        <p class="text-dark/70">All healthcare professionals are thoroughly screened and credentialed.</p>
+                    </div>
+                    <div class="feature-card group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all">
+                            <i class="fas fa-clock text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">24/7 Support</h3>
+                        <p class="text-dark/70">Round-the-clock assistance for all your staffing needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="py-20 bg-gray-50 relative">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                    <p class="text-xl text-dark/70">Comprehensive staffing solutions for your facility</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="feature-card transform hover:scale-105 transition-all" data-aos="fade-right">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent/10 p-4 rounded-lg">
+                                <i class="fas fa-user-md text-2xl text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Temporary Staffing</h3>
+                                <p class="text-dark/70 mb-4">Flexible staffing solutions for short-term needs and coverage gaps.</p>
+                                <a href="/services#temporary" class="text-accent font-medium hover:underline group">
+                                    Learn More 
+                                    <i class="fas fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card transform hover:scale-105 transition-all" data-aos="fade-left">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent/10 p-4 rounded-lg">
+                                <i class="fas fa-plane text-2xl text-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Travel Nursing</h3>
+                                <p class="text-dark/70 mb-4">Connect with experienced travel nurses for assignments nationwide.</p>
+                                <a href="/services#travel" class="text-accent font-medium hover:underline group">
+                                    Learn More 
+                                    <i class="fas fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-gradient-to-br from-dark to-gray-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-5"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-4xl md:text-5xl font-bold text-accent mb-2">
+                            <span class="counter" data-target="500">0</span>+
+                        </div>
+                        <p class="text-white/80">Healthcare Facilities</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-4xl md:text-5xl font-bold text-accent mb-2">
+                            <span class="counter" data-target="5000">0</span>+
+                        </div>
+                        <p class="text-white/80">Professionals Placed</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-4xl md:text-5xl font-bold text-accent mb-2">
+                            <span class="counter" data-target="98">0</span>%
+                        </div>
+                        <p class="text-white/80">Satisfaction Rate</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-4xl md:text-5xl font-bold text-accent mb-2">24/7</div>
+                        <p class="text-white/80">Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 relative overflow-hidden bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                    <p class="text-xl text-dark/70">Trusted by leading healthcare facilities</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="feature-card transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-accent mb-4">
+                            <i class="fas fa-quote-left text-3xl"></i>
+                        </div>
+                        <p class="text-dark/70 mb-6">"CynCare has transformed our staffing process. Their quick response times and quality candidates have made a significant impact."</p>
+                        <div class="flex items-center">
+                            <img src="images/testimonials/client1.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Dr. Sarah Williams</h4>
+                                <p class="text-dark/70">Medical Director, City Hospital</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-accent mb-4">
+                            <i class="fas fa-quote-left text-3xl"></i>
+                        </div>
+                        <p class="text-dark/70 mb-6">"The quality of healthcare professionals and the level of service provided by CynCare is exceptional. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <img src="images/testimonials/client2.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">James Martinez</h4>
+                                <p class="text-dark/70">HR Director, Care Network</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-accent mb-4">
+                            <i class="fas fa-quote-left text-3xl"></i>
+                        </div>
+                        <p class="text-dark/70 mb-6">"Working with CynCare has been seamless. Their platform is intuitive, and their support team is always available."</p>
+                        <div class="flex items-center">
+                            <img src="images/testimonials/client3.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Lisa Chen</h4>
+                                <p class="text-dark/70">Operations Manager, Health Plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-dark to-gray-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-5"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center max-w-3xl mx-auto" data-aos="zoom-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Healthcare Staffing?</h2>
+                    <p class="text-xl text-white/80 mb-8">Join hundreds of healthcare facilities that trust CynCare for their staffing needs</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="/apply.html" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
+                            Get Started
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="/about.html" class="btn-secondary bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
+                            Learn More
+                            <i class="fas fa-info-circle ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                // Start counting when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(counter);
+            });
+        });
+    </script>
+
+    <style>
+    .bg-pattern {
+        background-image: 
+            linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+            linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+            linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+            linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+            linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377),
+            linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377);
+        background-size: 80px 140px;
+        background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+    .feature-card {
+        @apply bg-white rounded-2xl p-8 shadow-sm border border-dark/5 hover:shadow-lg transition-all duration-300;
+    }
+
+    .btn-primary {
+        box-shadow: 0 4px 6px -1px rgba(42, 245, 152, 0.2), 0 2px 4px -1px rgba(42, 245, 152, 0.1);
+    }
+
+    .btn-secondary:hover {
+        box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.05);
+    }
+    </style>
+</body>
+</html> 

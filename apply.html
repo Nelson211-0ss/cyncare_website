@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for healthcare positions at CynCare - Your next career opportunity awaits">
+    <title>Job Application | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- Form Header -->
+            <div class="max-w-4xl mx-auto mb-12 text-center">
+                <h1 class="text-4xl font-bold mb-4">Job Application Form</h1>
+                <p class="text-dark/70">Please complete all required fields. Fields marked with an asterisk (*) are required.</p>
+            </div>
+
+            <!-- Application Form -->
+            <form id="job-application" class="max-w-4xl mx-auto space-y-8">
+                <!-- Personal Information -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-user text-accent"></i>
+                        Personal Information
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Legal First Name
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Legal Last Name
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Email Address
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Phone Number
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" required pattern="[0-9()-\s]+" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Current Location
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" required placeholder="City, State" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Willing to Relocate?
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Select an option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="depends">Depends on location</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-briefcase text-accent"></i>
+                        Professional Information
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Professional License Number
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    License State
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select a state</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <!-- Add all US states -->
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    License Expiration Date
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="date" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Specialty
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select a specialty</option>
+                                    <option value="rn-med-surg">RN - Medical/Surgical</option>
+                                    <option value="rn-icu">RN - ICU</option>
+                                    <option value="rn-er">RN - Emergency</option>
+                                    <option value="rn-or">RN - Operating Room</option>
+                                    <option value="rn-peds">RN - Pediatrics</option>
+                                    <option value="lpn">LPN</option>
+                                    <option value="cna">CNA</option>
+                                    <!-- Add more specialties -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Years of Experience
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Select years of experience</option>
+                                <option value="0-1">Less than 1 year</option>
+                                <option value="1-2">1-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Certifications
+                                <span class="text-dark/60 font-normal">(Select all that apply)</span>
+                            </label>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>BLS</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>ACLS</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>PALS</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" class="w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                    <span>NIH Stroke Scale</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employment Preferences -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-clipboard-list text-accent"></i>
+                        Employment Preferences
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Position Type
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select position type</option>
+                                    <option value="permanent">Permanent</option>
+                                    <option value="temporary">Temporary</option>
+                                    <option value="travel">Travel</option>
+                                    <option value="per-diem">Per Diem</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Shift Preference
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <select required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                    <option value="">Select preferred shift</option>
+                                    <option value="day">Day (7am-7pm)</option>
+                                    <option value="night">Night (7pm-7am)</option>
+                                    <option value="mid">Mid (3pm-11pm)</option>
+                                    <option value="any">Any Shift</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Earliest Start Date
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <input type="date" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Desired Pay Rate
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2">$</span>
+                                    <input type="number" required min="0" step="0.01" class="form-input w-full pl-8 pr-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <p class="text-xs text-dark/60">Hourly rate before taxes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work History -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-history text-accent"></i>
+                        Work History
+                    </h2>
+                    <div class="space-y-8">
+                        <!-- Most Recent Position -->
+                        <div class="space-y-6">
+                            <h3 class="text-lg font-semibold">Most Recent Position</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        Employer Name
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        Position Title
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        Start Date
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="date" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        End Date
+                                        <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="date" required class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Responsibilities & Achievements
+                                    <span class="text-red-500">*</span>
+                                </label>
+                                <textarea required rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Previous Position -->
+                        <div class="space-y-6 pt-6 border-t border-gray-200">
+                            <h3 class="text-lg font-semibold">Previous Position</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        Employer Name
+                                    </label>
+                                    <input type="text" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        Position Title
+                                    </label>
+                                    <input type="text" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        Start Date
+                                    </label>
+                                    <input type="date" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-sm font-semibold text-dark">
+                                        End Date
+                                    </label>
+                                    <input type="date" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-dark">
+                                    Responsibilities & Achievements
+                                </label>
+                                <textarea rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-file-alt text-accent"></i>
+                        Additional Information
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Resume/CV
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex items-center gap-4">
+                                <label class="flex-1 cursor-pointer">
+                                    <div class="px-4 py-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-accent transition-colors text-center">
+                                        <i class="fas fa-cloud-upload-alt text-2xl text-dark/40 mb-2"></i>
+                                        <p class="text-dark/60">Click to upload or drag and drop</p>
+                                        <p class="text-xs text-dark/40">PDF, DOC, DOCX (Max 5MB)</p>
+                                    </div>
+                                    <input type="file" class="hidden" accept=".pdf,.doc,.docx" required>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-dark">
+                                Additional Comments
+                            </label>
+                            <textarea rows="4" class="form-input w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none" placeholder="Any additional information you'd like us to know..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Information -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
+                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                        <i class="fas fa-gavel text-accent"></i>
+                        Legal Information
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <label class="flex items-start gap-3">
+                                <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                <span class="text-sm text-dark/70">
+                                    I am legally eligible to work in the United States
+                                    <span class="text-red-500">*</span>
+                                </span>
+                            </label>
+                            <label class="flex items-start gap-3">
+                                <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                <span class="text-sm text-dark/70">
+                                    I understand that any false statements or deliberate omissions on this application may be grounds for rejection of my application or termination of my employment
+                                    <span class="text-red-500">*</span>
+                                </span>
+                            </label>
+                            <label class="flex items-start gap-3">
+                                <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-2 border-gray-300 text-accent focus:ring-accent/20">
+                                <span class="text-sm text-dark/70">
+                                    I agree to CynCare's <a href="/privacy.html" class="text-accent hover:underline">Privacy Policy</a> and <a href="/terms.html" class="text-accent hover:underline">Terms of Service</a>
+                                    <span class="text-red-500">*</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center pt-4">
+                    <button type="submit" class="px-12 py-4 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg transition-all transform hover:scale-105 flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+        });
+    </script>
+</body>
+</html> 

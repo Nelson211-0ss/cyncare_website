@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse healthcare job opportunities at CynCare - Find your next career move">
+    <title>Job Listings | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- Page Header -->
+            <div class="max-w-4xl mx-auto mb-12 text-center">
+                <h1 class="text-4xl font-bold mb-4">Healthcare Job Opportunities</h1>
+                <p class="text-dark/70">Find your next career opportunity in healthcare</p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="max-w-7xl mx-auto mb-8">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-dark/5">
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <!-- Search -->
+                        <div class="md:col-span-2">
+                            <div class="relative">
+                                <input type="text" placeholder="Search jobs..." class="w-full pl-10 pr-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-dark/40"></i>
+                            </div>
+                        </div>
+                        <!-- Location Filter -->
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">All Locations</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <!-- Add all states -->
+                            </select>
+                        </div>
+                        <!-- Specialty Filter -->
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">All Specialties</option>
+                                <option value="rn-med-surg">RN - Medical/Surgical</option>
+                                <option value="rn-icu">RN - ICU</option>
+                                <option value="rn-er">RN - Emergency</option>
+                                <option value="rn-or">RN - Operating Room</option>
+                                <option value="rn-peds">RN - Pediatrics</option>
+                                <option value="lpn">LPN</option>
+                                <option value="cna">CNA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Advanced Filters -->
+                    <div class="mt-4 grid md:grid-cols-4 gap-4">
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Employment Type</option>
+                                <option value="full-time">Full Time</option>
+                                <option value="part-time">Part Time</option>
+                                <option value="contract">Contract</option>
+                                <option value="temporary">Temporary</option>
+                                <option value="per-diem">Per Diem</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Shift Type</option>
+                                <option value="day">Day (7am-7pm)</option>
+                                <option value="night">Night (7pm-7am)</option>
+                                <option value="mid">Mid (3pm-11pm)</option>
+                                <option value="rotating">Rotating</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Experience Level</option>
+                                <option value="entry">Entry Level (0-1 year)</option>
+                                <option value="junior">Junior (1-3 years)</option>
+                                <option value="mid">Mid-Level (3-5 years)</option>
+                                <option value="senior">Senior (5+ years)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none">
+                                <option value="">Salary Range</option>
+                                <option value="0-50">$0 - $50/hr</option>
+                                <option value="50-75">$50 - $75/hr</option>
+                                <option value="75-100">$75 - $100/hr</option>
+                                <option value="100+">$100+/hr</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Listings -->
+            <div class="max-w-7xl mx-auto">
+                <div class="grid gap-6">
+                    <!-- Sample Job Card -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-dark/5 hover:shadow-md transition-shadow">
+                        <div class="flex flex-wrap gap-6 justify-between">
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-hospital text-accent text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-xl font-semibold">ICU Registered Nurse</h2>
+                                        <p class="text-dark/70">City Hospital - New York, NY</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">Full Time</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">Night Shift</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">3+ Years Experience</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">$80-95/hr</span>
+                                </div>
+                                <p class="text-dark/70">Join our dynamic ICU team providing critical care to patients. We offer competitive pay and comprehensive benefits.</p>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="/apply.html?job=icu-rn-123" class="px-6 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg transition-all transform hover:scale-105 flex items-center gap-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sample Job Card -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-dark/5 hover:shadow-md transition-shadow">
+                        <div class="flex flex-wrap gap-6 justify-between">
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-clinic-medical text-accent text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-xl font-semibold">Emergency Room RN</h2>
+                                        <p class="text-dark/70">Metropolitan Medical Center - Los Angeles, CA</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">Per Diem</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">Rotating Shifts</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">2+ Years Experience</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">$70-85/hr</span>
+                                </div>
+                                <p class="text-dark/70">Seeking experienced ER nurses for our Level 1 Trauma Center. Flexible scheduling and competitive rates.</p>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="/apply.html?job=er-rn-456" class="px-6 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg transition-all transform hover:scale-105 flex items-center gap-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sample Job Card -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-dark/5 hover:shadow-md transition-shadow">
+                        <div class="flex flex-wrap gap-6 justify-between">
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-user-nurse text-accent text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-xl font-semibold">Medical-Surgical RN</h2>
+                                        <p class="text-dark/70">Community Health Center - Chicago, IL</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">Contract</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">Day Shift</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">1+ Years Experience</span>
+                                    <span class="px-3 py-1 bg-accent/10 text-dark rounded-full text-sm">$65-75/hr</span>
+                                </div>
+                                <p class="text-dark/70">13-week contract position in Med-Surg unit. Opportunity for extension and competitive benefits package.</p>
+                            </div>
+                            <div class="flex items-center">
+                                <a href="/apply.html?job=med-surg-789" class="px-6 py-3 bg-accent hover:bg-accent/90 text-dark font-semibold rounded-lg transition-all transform hover:scale-105 flex items-center gap-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-8 flex justify-center">
+                    <nav class="flex items-center gap-2">
+                        <button class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-gray-300 text-dark/70 hover:border-accent hover:text-accent transition-colors">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-accent text-dark font-semibold">1</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-gray-300 text-dark/70 hover:border-accent hover:text-accent transition-colors">2</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-gray-300 text-dark/70 hover:border-accent hover:text-accent transition-colors">3</button>
+                        <button class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-gray-300 text-dark/70 hover:border-accent hover:text-accent transition-colors">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+
+            // Get job ID from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('job');
+            
+            // If job ID exists, scroll to that job listing
+            if (jobId) {
+                const jobElement = document.getElementById(jobId);
+                if (jobElement) {
+                    jobElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
