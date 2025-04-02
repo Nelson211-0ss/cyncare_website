@@ -1,0 +1,17 @@
+{
+  "name": "cyncare-website",
+  "version": "1.0.0",
+  "description": "CynCare Healthcare Staffing Website",
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "build": "echo \"No build step required for static site\"",
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
