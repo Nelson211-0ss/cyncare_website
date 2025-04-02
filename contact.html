@@ -65,6 +65,77 @@
         .form-input:hover {
             @apply border-gray-400;
         }
+
+        /* Modern form styles */
+        .form-group {
+            @apply relative transition-all duration-300 transform;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            @apply text-gray-400;
+        }
+        
+        .form-group input:focus::placeholder,
+        .form-group textarea:focus::placeholder {
+            @apply text-gray-500;
+        }
+        
+        .form-group:focus-within {
+            @apply -translate-y-1;
+        }
+        
+        /* Smooth focus transitions */
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            @apply transform scale-[1.01] shadow-lg bg-white/80;
+        }
+        
+        /* Custom checkbox styles */
+        input[type="checkbox"] {
+            @apply transition-shadow duration-200 ease-in-out;
+        }
+        
+        input[type="checkbox"]:checked {
+            @apply shadow-accent/20;
+        }
+        
+        /* Background animation */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .bg-gradient-animate {
+            @apply bg-gradient-to-r from-accent/5 via-transparent to-accent/5 bg-[length:200%_200%];
+            animation: gradient 15s ease infinite;
+        }
+
+        /* Enhanced button styles */
+        .submit-btn {
+            @apply relative overflow-hidden;
+        }
+        
+        .submit-btn::after {
+            content: '';
+            @apply absolute inset-0 bg-white/20 transform -translate-x-full transition-transform duration-300;
+        }
+        
+        .submit-btn:hover::after {
+            @apply translate-x-0;
+        }
+        
+        /* Form success animation */
+        @keyframes success-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .success-animation {
+            animation: success-bounce 0.5s ease;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -109,256 +180,12 @@
                             </div>
                             <p class="text-dark/70">Fill out the form below and we'll get back to you as soon as possible.</p>
                         </div>
-                        <form id="contact-form" class="bg-white rounded-2xl p-8 shadow-sm border border-dark/5">
-                            <div class="space-y-6">
+                        <form id="contact-form" class="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 shadow-xl border border-dark/5 backdrop-blur-lg relative overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
+                            <!-- Decorative elements -->
+                            <div class="absolute top-0 right-0 w-60 h-60 bg-accent/10 rounded-full filter blur-3xl -z-10 transform translate-x-20 -translate-y-20 transition-transform group-hover:translate-x-10"></div>
+                            <div class="absolute bottom-0 left-0 w-60 h-60 bg-accent/10 rounded-full filter blur-3xl -z-10 transform -translate-x-20 translate-y-20 transition-transform group-hover:-translate-x-10"></div>
+                            
+                            <div class="space-y-8">
+                                <!-- Name and Email group -->
                                 <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="space-y-2">
-                                        <label for="name" class="block text-sm font-semibold text-dark">
-                                            Full Name
-                                            <span class="text-red-500">*</span>
-                                        </label>
-                                        <div class="relative">
-                                            <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
-                                                <i class="fas fa-user"></i>
-                                            </span>
-                                            <input 
-                                                type="text" 
-                                                id="name" 
-                                                name="name" 
-                                                required 
-                                                class="form-input pl-10 bg-white" 
-                                            >
-                                        </div>
-                                        <p class="text-xs text-dark/60">Enter your full legal name</p>
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label for="email" class="block text-sm font-semibold text-dark">
-                                            Email Address
-                                            <span class="text-red-500">*</span>
-                                        </label>
-                                        <div class="relative">
-                                            <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
-                                                <i class="fas fa-envelope"></i>
-                                            </span>
-                                            <input 
-                                                type="email" 
-                                                id="email" 
-                                                name="email" 
-                                                required 
-                                                class="form-input pl-10 bg-white" 
-                                            >
-                                        </div>
-                                        <p class="text-xs text-dark/60">We'll never share your email with anyone else</p>
-                                    </div>
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="phone" class="block text-sm font-semibold text-dark">
-                                        Phone Number
-                                        <span class="text-dark/60 font-normal">(Optional)</span>
-                                    </label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
-                                            <i class="fas fa-phone"></i>
-                                        </span>
-                                        <input 
-                                            type="tel" 
-                                            id="phone" 
-                                            name="phone" 
-                                            class="form-input pl-10 bg-white" 
-                                            pattern="[0-9()-\s]+"
-                                        >
-                                    </div>
-                                    <p class="text-xs text-dark/60">Include area code (e.g., 555-123-4567)</p>
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="subject" class="block text-sm font-semibold text-dark">
-                                        Inquiry Type
-                                        <span class="text-red-500">*</span>
-                                    </label>
-                                    <div class="relative">
-                                        <span class="absolute inset-y-0 left-4 flex items-center text-dark/40">
-                                            <i class="fas fa-briefcase"></i>
-                                        </span>
-                                        <select id="subject" name="subject" required class="form-input pl-10 bg-white appearance-none">
-                                            <option value="" disabled selected>-- Select an inquiry type --</option>
-                                            <option value="permanent">Permanent Placement</option>
-                                            <option value="temporary">Temporary Staffing</option>
-                                            <option value="travel">Travel Nursing</option>
-                                            <option value="other">Other Inquiry</option>
-                                        </select>
-                                        <span class="absolute inset-y-0 right-4 flex items-center text-dark/40 pointer-events-none">
-                                            <i class="fas fa-chevron-down"></i>
-                                        </span>
-                                    </div>
-                                    <p class="text-xs text-dark/60">Select the most relevant option for your inquiry</p>
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="message" class="block text-sm font-semibold text-dark">
-                                        Message Details
-                                        <span class="text-red-500">*</span>
-                                    </label>
-                                    <div class="relative">
-                                        <span class="absolute top-4 left-4 text-dark/40">
-                                            <i class="fas fa-message"></i>
-                                        </span>
-                                        <textarea 
-                                            id="message" 
-                                            name="message" 
-                                            rows="6" 
-                                            required 
-                                            class="form-input pl-10 bg-white" 
-                                            minlength="10"
-                                        ></textarea>
-                                    </div>
-                                    <p class="text-xs text-dark/60">Please provide detailed information about your inquiry (minimum 10 characters)</p>
-                                </div>
-                                <div class="flex items-start gap-3 pt-4">
-                                    <input 
-                                        type="checkbox" 
-                                        id="consent" 
-                                        name="consent" 
-                                        required 
-                                        class="mt-1 h-4 w-4 rounded border-gray-300 text-accent focus:ring-accent/20"
-                                    >
-                                    <label for="consent" class="text-sm text-dark/70">
-                                        I agree to the <a href="/privacy" class="text-accent hover:underline">Privacy Policy</a> and consent to being contacted about my inquiry.
-                                        <span class="text-red-500">*</span>
-                                    </label>
-                                </div>
-                                <button 
-                                    type="submit" 
-                                    class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold py-4 px-8 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
-                                >
-                                    <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
-                                    <span>Submit Inquiry</span>
-                                </button>
-                                <div class="text-center space-y-2">
-                                    <p class="text-sm text-dark/60">
-                                        <span class="text-red-500">*</span> Required fields
-                                    </p>
-                                    <p class="text-xs text-dark/60">
-                                        Response time: Within 24-48 business hours
-                                    </p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Contact Information -->
-                    <div class="space-y-8" data-aos="fade-left">
-                        <div class="bg-accent/5 rounded-2xl p-8">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-info-circle text-2xl text-accent"></i>
-                                </div>
-                                <h2 class="text-3xl font-bold">Contact Information</h2>
-                            </div>
-                            <p class="text-dark/70">Reach out to us through any of these channels.</p>
-                        </div>
-                        <div class="grid gap-6">
-                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold mb-2">Office Location</h3>
-                                        <p class="text-dark/70">123 Healthcare Avenue<br>Suite 456<br>San Francisco, CA 94105</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-phone-alt text-2xl text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold mb-2">Phone Numbers</h3>
-                                        <p class="text-dark/70">
-                                            <a href="tel:+15551234567" class="hover:text-accent transition-colors">Main: (555) 123-4567</a><br>
-                                            <a href="tel:+18002962273" class="hover:text-accent transition-colors">Toll Free: 1-800-CYNCARE</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-envelope text-2xl text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold mb-2">Email Addresses</h3>
-                                        <p class="text-dark/70">
-                                            <a href="mailto:info@cyncare.com" class="hover:text-accent transition-colors">General: info@cyncare.com</a><br>
-                                            <a href="mailto:support@cyncare.com" class="hover:text-accent transition-colors">Support: support@cyncare.com</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-card hover:-translate-y-1 transition-all duration-300">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-clock text-2xl text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold mb-2">Business Hours</h3>
-                                        <p class="text-dark/70">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Find Us</h2>
-                    <p class="text-dark/70" data-aos="fade-up" data-aos-delay="100">Visit our office to learn more about our services</p>
-                </div>
-                <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0637507774103!2d-122.39901868441007!3d37.78992847975525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807c23cc4ebb%3A0x1c5c46524764a58f!2s123%20Main%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1625147984540!5m2!1sen!2sus"
-                        width="100%"
-                        height="450"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        $(function(){
-            $("#header-placeholder").load("components/header.html");
-            $("#footer-placeholder").load("components/footer.html");
-            
-            // Initialize AOS
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
-
-            // Form Submission Handler
-            $("#contact-form").on("submit", function(e) {
-                e.preventDefault();
-                // Add your form submission logic here
-                alert("Thank you for your message. We'll get back to you soon!");
-                this.reset();
-            });
-        });
-    </script>
-</body>
-</html> 
+                                    <div class="form-group
