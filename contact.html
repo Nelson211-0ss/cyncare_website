@@ -33,331 +33,215 @@
     <style>
         .bg-pattern {
             background-image: 
-                radial-gradient(circle at 100% 100%, #2af598 0%, transparent 25%),
-                radial-gradient(circle at 0% 0%, #242733 0%, transparent 20%),
                 linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
                 linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
                 linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
-                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733);
+                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
+                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377),
+                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377);
             background-size: 80px 140px;
             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
         }
 
-        .form-input {
-            @apply w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 bg-white/80 backdrop-blur-sm;
-        }
-
-        .form-label {
-            @apply block text-sm font-medium text-gray-700 mb-2;
-        }
-
         .contact-card {
-            @apply bg-gradient-to-br from-white to-white/95 backdrop-blur-sm rounded-3xl p-10 shadow-2xl hover:shadow-3xl border-2 border-white transition-all duration-500 transform hover:-translate-y-2;
-            box-shadow: 0 25px 50px -12px rgba(42, 245, 152, 0.25);
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(36, 39, 51, 0.05);
+            transition: all 0.3s;
         }
 
         .contact-card:hover {
-            box-shadow: 0 35px 60px -15px rgba(42, 245, 152, 0.35);
-            border-color: rgba(42, 245, 152, 0.5);
-            transform: translateY(-16px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .card-icon-wrapper {
-            @apply w-24 h-24 bg-gradient-to-br from-accent/30 to-accent/5 rounded-2xl flex items-center justify-center mb-8 group-hover:from-accent/40 group-hover:to-accent/10 transition-all duration-500 relative mx-auto;
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #E5E7EB;
+            outline: none;
+            transition: all 0.2s;
         }
 
-        .card-icon-wrapper::before {
+        .form-input:focus {
+            border-color: #2af598;
+            box-shadow: 0 0 0 2px rgba(42, 245, 152, 0.2);
+        }
+
+        select.form-input {
+            background-color: white;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 0.25rem;
+            border: 2px solid #E5E7EB;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #2af598;
+            border-color: #2af598;
+        }
+
+        .form-input:hover {
+            border-color: #9CA3AF;
+        }
+
+        .form-group {
+            position: relative;
+            transition: all 0.3s;
+            transform: translateY(0);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9CA3AF;
+        }
+
+        .form-group input:focus::placeholder,
+        .form-group textarea:focus::placeholder {
+            color: #6B7280;
+        }
+
+        .form-group:focus-within {
+            transform: translateY(-0.25rem);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            transform: scale(1.01);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .submit-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::after {
             content: '';
             position: absolute;
-            inset: -2px;
-            background: linear-gradient(to bottom right, rgba(42, 245, 152, 0.5), transparent);
-            border-radius: 1rem;
-            z-index: 0;
-            opacity: 0;
-            transition: opacity 0.5s;
+            inset: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: transform 0.3s;
         }
 
-        .contact-card:hover .card-icon-wrapper::before {
-            opacity: 1;
+        .submit-btn:hover::after {
+            transform: translateX(0);
         }
 
-        .gradient-text {
-            @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-emerald-400 to-blue-500;
-            animation: gradient 8s ease-in-out infinite;
+        @keyframes success-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        @keyframes gradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        .success-animation {
+            animation: success-bounce 0.5s ease;
         }
 
-        .custom-shape-divider-bottom-1 {
+        .form-container {
+            background: linear-gradient(135deg, white, #f9fafb);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(36, 39, 51, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .decorative-blob {
             position: absolute;
+            width: 15rem;
+            height: 15rem;
+            border-radius: 9999px;
+            filter: blur(70px);
+            z-index: -1;
+            background-color: rgba(42, 245, 152, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .decorative-blob-top {
+            top: 0;
+            right: 0;
+            transform: translate(5rem, -5rem);
+        }
+
+        .decorative-blob-bottom {
             bottom: 0;
             left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
+            transform: translate(-5rem, 5rem);
         }
 
-        .custom-shape-divider-bottom-1 svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 150px;
-            transform: rotateY(180deg);
+        .form-container:hover .decorative-blob-top {
+            transform: translate(2.5rem, -2.5rem);
         }
 
-        .custom-shape-divider-bottom-1 .shape-fill {
-            fill: #FFFFFF;
-        }
-
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .pulse-ring {
-            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-        }
-
-        @keyframes pulse-ring {
-            0% { transform: scale(0.95); opacity: 0.5; }
-            50% { transform: scale(1); opacity: 0.3; }
-            100% { transform: scale(0.95); opacity: 0.5; }
+        .form-container:hover .decorative-blob-bottom {
+            transform: translate(-2.5rem, 2.5rem);
         }
     </style>
 </head>
-<body class="overflow-x-hidden bg-gray-50">
+<body class="overflow-x-hidden">
     <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-32 bg-gradient-to-br from-dark via-gray-900 to-dark relative overflow-hidden">
-        <div class="absolute inset-0 bg-pattern opacity-15"></div>
-        <!-- Animated Circles -->
-        <div class="absolute top-20 left-20 w-[600px] h-[600px] bg-accent/10 rounded-full filter blur-3xl pulse-ring"></div>
-        <div class="absolute -bottom-20 right-20 w-[700px] h-[700px] bg-blue-500/10 rounded-full filter blur-3xl pulse-ring" style="animation-delay: 1s;"></div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-                <span class="inline-block px-8 py-4 bg-accent/10 rounded-full text-accent font-semibold mb-8 backdrop-blur-sm border border-accent/20 text-lg" data-aos="fade-down">
-                    <i class="fas fa-comments-alt mr-2"></i>
-                    Get in Touch With Us
-                </span>
-                <h1 class="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight gradient-text" data-aos="fade-up">
-                    Let's Start a 
-                    <span class="text-accent">Conversation</span>
-                </h1>
-                <p class="text-2xl text-white/90 leading-relaxed mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Have questions about our healthcare staffing solutions? We're here to help you find the perfect match for your needs.
-                </p>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[40vh] flex items-center">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/contact-hero.jpg" alt="Contact Us" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/90 to-dark/80"></div>
+                <div class="absolute inset-0 bg-pattern opacity-10"></div>
             </div>
-        </div>
 
-        <!-- Wave Shape Divider -->
-        <div class="custom-shape-divider-bottom-1">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Contact Info Cards -->
-    <section class="py-24 relative -mt-48">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Email Card -->
-                <div class="contact-card group floating" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-icon-wrapper">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                        <i class="fas fa-envelope text-4xl text-accent relative z-10"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-dark mb-4 text-center">Email Us</h3>
-                    <p class="text-gray-600 mb-8 text-xl leading-relaxed text-center">For general inquiries and information about our services.</p>
-                    <div class="pt-6 border-t border-gray-100">
-                        <a href="mailto:info@cyncare.com" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold group text-xl w-full justify-center">
-                            info@cyncare.com
-                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-500"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Phone Card -->
-                <div class="contact-card group floating" style="animation-delay: 0.2s;" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-icon-wrapper">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                        <i class="fas fa-phone-alt text-4xl text-accent relative z-10"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-dark mb-4 text-center">Call Us</h3>
-                    <p class="text-gray-600 mb-8 text-xl leading-relaxed text-center">Our support team is available 24/7 to assist you.</p>
-                    <div class="pt-6 border-t border-gray-100">
-                        <a href="tel:1-800-CYNCARE" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold group text-xl w-full justify-center">
-                            1-800-CYNCARE
-                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-500"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Office Card -->
-                <div class="contact-card group floating" style="animation-delay: 0.4s;" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-icon-wrapper">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                        <i class="fas fa-map-marker-alt text-4xl text-accent relative z-10"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-dark mb-4 text-center">Visit Us</h3>
-                    <p class="text-gray-600 mb-8 text-xl leading-relaxed text-center">Come by our office in Houston, Texas.</p>
-                    <div class="pt-6 border-t border-gray-100">
-                        <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold group text-xl w-full justify-center">
-                            Get Directions
-                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-500"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <span class="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold mb-6" data-aos="fade-down">
-                        Contact Form
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Send Us a Message</h2>
-                    <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
-                        Fill out the form below and we'll get back to you as soon as possible.
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
+                        Get in
+                        <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Touch</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                        We're here to help with all your healthcare staffing needs
                     </p>
                 </div>
-
-                <div class="bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl relative" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Decorative Elements -->
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-
-                    <form class="relative space-y-8">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-6">
-                                <div class="form-group">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-input" placeholder="Enter your first name">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-input" placeholder="Enter your email">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-input" placeholder="Enter your phone number">
-                                </div>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="form-group">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-input" placeholder="Enter your last name">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Subject</label>
-                                    <select class="form-input">
-                                        <option value="">Select a subject</option>
-                                        <option value="general">General Inquiry</option>
-                                        <option value="staffing">Staffing Solutions</option>
-                                        <option value="partnership">Partnership Opportunities</option>
-                                        <option value="support">Technical Support</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Best Time to Contact</label>
-                                    <select class="form-input">
-                                        <option value="">Select a time</option>
-                                        <option value="morning">Morning (9AM - 12PM)</option>
-                                        <option value="afternoon">Afternoon (12PM - 5PM)</option>
-                                        <option value="evening">Evening (5PM - 8PM)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-input min-h-[150px] resize-none" placeholder="Type your message here..."></textarea>
-                        </div>
-
-                        <div class="flex items-start mb-6">
-                            <div class="flex items-center h-5">
-                                <input type="checkbox" class="w-5 h-5 border-2 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-accent/20 checked:bg-accent checked:border-accent">
-                            </div>
-                            <label class="ml-3 text-sm text-gray-600">
-                                I agree to the <a href="#" class="text-accent hover:text-accent/80 font-medium">Privacy Policy</a> and <a href="#" class="text-accent hover:text-accent/80 font-medium">Terms of Service</a>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-[1.02] focus:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-accent/25">
-                            Send Message
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Map Section -->
-    <section class="py-20 bg-white relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <span class="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold mb-6" data-aos="fade-down">
-                        Our Location
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Visit Our Office</h2>
-                    <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
-                        Come see us at our Houston headquarters
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-3xl p-6 shadow-xl overflow-hidden" data-aos="fade-up">
-                    <div class="rounded-2xl overflow-hidden">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.480714751451!2d-95.36790378489242!3d29.760324381989347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf2676a9d89b%3A0x3ea576e8c1e9874c!2sDowntown%20Houston%2C%20Houston%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1625764245783!5m2!1sen!2s" 
-                            width="100%" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            class="rounded-xl"
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        $(function(){
-            $("#header-placeholder").load("components/header.html");
-            $("#footer-placeholder").load("components/footer.html");
-            
-            // Initialize AOS
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
-        });
-    </script>
-</body>
-</html>
+        <!-- Contact Section -->
+        <section class="py-20 bg-white relative">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="space-y-8" data-aos="fade-right">
+                        <div class="bg-accent/5 rounded-2xl p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-2xl text-accent"></i>
+                                </div>
+                                <h2 class="text-3xl font-bold">Send us a Message</h2>
+                            </div>
+                            <p class="text-dark/70">Fill out the form below and we'll get back to you as soon as possible.</p>
+                        </div>
+                        <form id="contact-form" class="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 shadow-xl border border-dark/5 backdrop-blur-lg relative overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
+                            <!-- Decorative elements -->
+                            <div class="absolute top-0 right-0 w-60 h-60 bg-accent/10 rounded-full filter blur-3xl -z-10 transform translate-x-20 -translate-y-20 transition-transform group-hover:translate-x-10"></div>
+                            <div class="absolute bottom-0 left-0 w-60 h-60 bg-accent/10 rounded-full filter blur-3xl -z-10 transform -translate-x-20 translate-y-20 transition-transform group-hover:-translate-x-10"></div>
+                            
+                            <div class="space-y-8">
+                                <!-- Name and Email group -->
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="form-group
