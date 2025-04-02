@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with CynCare Healthcare Staffing - We're here to help with all your healthcare staffing needs">
-    <title>Contact Us - CynCare Healthcare Staffing</title>
+    <title>Contact Us | CynCare Healthcare Staffing</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +14,7 @@
                 extend: {
                     colors: {
                         dark: '#242733',
-                        accent: '#2AF598',
+                        accent: '#2af598',
                     }
                 }
             }
@@ -22,7 +22,7 @@
     </script>
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,344 +43,183 @@
             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
         }
 
-        .contact-card {
-            background-color: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(36, 39, 51, 0.05);
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
         .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            border: 2px solid #E5E7EB;
-            outline: none;
-            transition: all 0.2s;
+            @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300;
         }
 
-        .form-input:focus {
-            border-color: #2af598;
-            box-shadow: 0 0 0 2px rgba(42, 245, 152, 0.2);
+        .form-label {
+            @apply block text-sm font-medium text-gray-700 mb-2;
         }
 
-        select.form-input {
-            background-color: white;
-            cursor: pointer;
+        .contact-card {
+            @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
         }
 
-        input[type="checkbox"] {
-            height: 1.25rem;
-            width: 1.25rem;
-            border-radius: 0.25rem;
-            border: 2px solid #E5E7EB;
-            cursor: pointer;
-        }
-
-        input[type="checkbox"]:checked {
-            background-color: #2af598;
-            border-color: #2af598;
-        }
-
-        .form-input:hover {
-            border-color: #9CA3AF;
-        }
-
-        .form-group {
-            position: relative;
-            transition: all 0.3s;
-            transform: translateY(0);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #9CA3AF;
-        }
-
-        .form-group input:focus::placeholder,
-        .form-group textarea:focus::placeholder {
-            color: #6B7280;
-        }
-
-        .form-group:focus-within {
-            transform: translateY(-0.25rem);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            transform: scale(1.01);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-
-        .submit-btn {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(-100%);
-            transition: transform 0.3s;
-        }
-
-        .submit-btn:hover::after {
-            transform: translateX(0);
-        }
-
-        @keyframes success-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .success-animation {
-            animation: success-bounce 0.5s ease;
-        }
-
-        .form-container {
-            background: linear-gradient(135deg, white, #f9fafb);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(36, 39, 51, 0.05);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .form-container:hover {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .decorative-blob {
-            position: absolute;
-            width: 15rem;
-            height: 15rem;
-            border-radius: 9999px;
-            filter: blur(70px);
-            z-index: -1;
-            background-color: rgba(42, 245, 152, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .decorative-blob-top {
-            top: 0;
-            right: 0;
-            transform: translate(5rem, -5rem);
-        }
-
-        .decorative-blob-bottom {
-            bottom: 0;
-            left: 0;
-            transform: translate(-5rem, 5rem);
-        }
-
-        .form-container:hover .decorative-blob-top {
-            transform: translate(2.5rem, -2.5rem);
-        }
-
-        .form-container:hover .decorative-blob-bottom {
-            transform: translate(-2.5rem, 2.5rem);
+        .gradient-text {
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-500;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="overflow-x-hidden bg-gray-50">
     <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="py-20 bg-gradient-to-br from-dark to-gray-900 relative overflow-hidden">
-            <div class="absolute inset-0 bg-pattern opacity-5"></div>
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">Get in Touch</h1>
-                    <p class="text-xl text-white/80" data-aos="fade-up" data-aos-delay="100">
-                        Have questions? We're here to help. Reach out to our team for assistance with staffing solutions.
-                    </p>
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-dark to-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
+                    Get in Touch with 
+                    <span class="text-accent">CynCare</span>
+                </h1>
+                <p class="text-xl text-white/80 leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="100">
+                    Have questions about our healthcare staffing solutions? We're here to help you find the perfect match for your needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="py-16 relative -mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- General Inquiries -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">General Inquiries</h3>
+                    <p class="text-gray-600 mb-4">For general questions and information about our services.</p>
+                    <a href="mailto:info@cyncare.com" class="text-accent hover:text-accent/80 font-semibold flex items-center gap-2">
+                        info@cyncare.com
+                        <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-phone-alt text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">24/7 Support</h3>
+                    <p class="text-gray-600 mb-4">Need immediate assistance? Our support team is available 24/7.</p>
+                    <a href="tel:1-800-CYNCARE" class="text-accent hover:text-accent/80 font-semibold flex items-center gap-2">
+                        1-800-CYNCARE
+                        <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Office Location -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-map-marker-alt text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Office Location</h3>
+                    <p class="text-gray-600 mb-4">Visit our main office in Houston, Texas.</p>
+                    <a href="https://maps.google.com" target="_blank" class="text-accent hover:text-accent/80 font-semibold flex items-center gap-2">
+                        Get Directions
+                        <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Options -->
-        <section class="py-20 -mt-12 relative z-20">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    <!-- Phone -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-phone text-2xl text-accent"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Call Us</h3>
-                        <p class="text-dark/70 mb-4">Available Monday to Friday, 9am - 6pm EST</p>
-                        <a href="tel:+1234567890" class="text-accent hover:text-accent/80 font-semibold">+1 (234) 567-890</a>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-envelope text-2xl text-accent"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Email Us</h3>
-                        <p class="text-dark/70 mb-4">We'll respond within 24 hours</p>
-                        <a href="mailto:info@cyncare.com" class="text-accent hover:text-accent/80 font-semibold">info@cyncare.com</a>
-                    </div>
-
-                    <!-- Office -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fas fa-location-dot text-2xl text-accent"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Visit Us</h3>
-                        <p class="text-dark/70 mb-4">Come by our office</p>
-                        <address class="text-accent hover:text-accent/80 font-semibold not-italic">
-                            123 Healthcare Ave<br>
-                            Suite 456<br>
-                            New York, NY 10001
-                        </address>
-                    </div>
-                </div>
-
-                <!-- Contact Form Section -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Form -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-right">
-                        <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
-                        <form class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-dark/70 mb-2" for="first_name">First Name</label>
-                                    <input type="text" id="first_name" name="first_name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" required>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-dark/70 mb-2" for="last_name">Last Name</label>
-                                    <input type="text" id="last_name" name="last_name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-dark/70 mb-2" for="email">Email Address</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-dark/70 mb-2" for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-dark/70 mb-2" for="subject">Subject</label>
-                                <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all">
-                                    <option value="">Select a subject</option>
-                                    <option value="staffing">Staffing Solutions</option>
-                                    <option value="careers">Career Opportunities</option>
-                                    <option value="partnership">Partnership Inquiries</option>
-                                    <option value="support">General Support</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-dark/70 mb-2" for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all" required></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-[1.02] focus:scale-[0.98]">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Map & Hours -->
-                    <div class="space-y-8" data-aos="fade-left">
-                        <!-- Map -->
-                        <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 class="text-xl font-bold mb-6">Our Location</h3>
-                            <div class="rounded-xl overflow-hidden h-[300px] bg-gray-100">
-                                <!-- Replace with actual map embed code -->
-                                <div class="w-full h-full bg-gray-200 flex items-center justify-center">
-                                    <span class="text-dark/50">Map Embed Here</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Business Hours -->
-                        <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 class="text-xl font-bold mb-6">Business Hours</h3>
-                            <ul class="space-y-4">
-                                <li class="flex justify-between items-center">
-                                    <span class="text-dark/70">Monday - Friday</span>
-                                    <span class="font-semibold">9:00 AM - 6:00 PM</span>
-                                </li>
-                                <li class="flex justify-between items-center">
-                                    <span class="text-dark/70">Saturday</span>
-                                    <span class="font-semibold">10:00 AM - 4:00 PM</span>
-                                </li>
-                                <li class="flex justify-between items-center">
-                                    <span class="text-dark/70">Sunday</span>
-                                    <span class="font-semibold">Closed</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Social Media -->
-                        <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 class="text-xl font-bold mb-6">Connect With Us</h3>
-                            <div class="flex gap-4">
-                                <a href="#" class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-dark transition-all">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-dark transition-all">
-                                    <i class="fab fa-facebook-f text-xl"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-dark transition-all">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-dark transition-all">
-                                    <i class="fab fa-instagram text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Frequently Asked Questions</h2>
-                    <p class="text-dark/70" data-aos="fade-up" data-aos-delay="100">
-                        Find quick answers to common questions about our services and processes.
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Send Us a Message</h2>
+                    <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                        Fill out the form below and we'll get back to you as soon as possible.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-gray-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-bold mb-4">How quickly can I get staffing support?</h3>
-                        <p class="text-dark/70">We typically process staffing requests within 24-48 hours, with many positions filled even sooner through our extensive network of pre-screened healthcare professionals.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-bold mb-4">What types of healthcare professionals do you staff?</h3>
-                        <p class="text-dark/70">We provide staffing solutions for RNs, LPNs, CNAs, CMAs, and other healthcare professionals across various specialties and departments.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-xl font-bold mb-4">How do you verify credentials?</h3>
-                        <p class="text-dark/70">We conduct thorough background checks, license verification, and credential validation for all healthcare professionals in our network to ensure quality and compliance.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="text-xl font-bold mb-4">What are your payment terms?</h3>
-                        <p class="text-dark/70">We offer flexible payment terms and transparent pricing models. Contact our team for detailed information about our competitive rates and billing options.</p>
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Decorative Elements -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+
+                    <form class="relative space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" placeholder="Enter your first name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" placeholder="Enter your last name">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <select class="form-input">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="staffing">Staffing Solutions</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="support">Technical Support</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-input min-h-[150px]" placeholder="Type your message here..."></textarea>
+                        </div>
+
+                        <div class="flex items-start mb-6">
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-accent/20">
+                            </div>
+                            <label class="ml-2 text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-accent hover:text-accent/80">Privacy Policy</a> and <a href="#" class="text-accent hover:text-accent/80">Terms of Service</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-[1.02] focus:scale-[0.98] flex items-center justify-center gap-2">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 shadow-xl overflow-hidden" data-aos="fade-up">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.480714751451!2d-95.36790378489242!3d29.760324381989347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf2676a9d89b%3A0x3ea576e8c1e9874c!2sDowntown%20Houston%2C%20Houston%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1625764245783!5m2!1sen!2s" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="rounded-2xl"
+                        ></iframe>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
