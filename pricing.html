@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CynCare Healthcare Staffing - Transparent pricing plans for healthcare facilities">
+    <title>Pricing | CynCare Healthcare Staffing</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#242733',
+                        accent: '#2af598',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .pricing-card {
+            @apply bg-white rounded-2xl p-8 shadow-xl border-2 border-transparent transition-all duration-300 hover:shadow-2xl relative overflow-hidden isolate;
+        }
+
+        .pricing-card::before {
+            content: '';
+            @apply absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent opacity-0 transition-opacity duration-300;
+            z-index: -1;
+        }
+
+        .pricing-card:hover::before {
+            @apply opacity-100;
+        }
+
+        .pricing-card.popular {
+            @apply border-accent;
+        }
+
+        .pricing-card.popular::after {
+            content: '';
+            @apply absolute top-0 right-0 w-20 h-20 bg-accent/10 -translate-y-1/2 translate-x-1/2 rotate-45 rounded-full;
+            z-index: -1;
+        }
+
+        .feature-check {
+            @apply flex items-center gap-3 text-gray-600 py-2 px-3 rounded-lg transition-colors duration-200;
+        }
+
+        .feature-check:hover {
+            @apply bg-gray-50;
+        }
+
+        .feature-check i {
+            @apply text-accent min-w-[1.25rem] text-center;
+        }
+
+        .feature-check i.fa-times {
+            @apply text-gray-400;
+        }
+
+        .feature-group {
+            @apply space-y-2 border border-gray-100 rounded-xl p-4 bg-gray-50/50;
+        }
+
+        .feature-group-title {
+            @apply text-sm font-medium text-gray-500 mb-3 px-3;
+        }
+
+        .toggle-checkbox:checked {
+            @apply right-0 border-accent;
+            background-color: #2af598;
+        }
+
+        .toggle-checkbox:checked + .toggle-label {
+            @apply bg-accent/20;
+        }
+
+        .price-tag {
+            @apply relative inline-flex items-baseline gap-1 py-3 px-6 rounded-2xl bg-gray-50 mb-8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-24 bg-gradient-to-br from-dark to-gray-900">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-accent font-semibold mb-4" data-aos="fade-up">PLANS & PRICING</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                        Select Your Ideal
+                        <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Plan</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        Our transparent pricing ensures you only pay for what you need, with no hidden fees or long-term contracts.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="relative -mt-16 py-20">
+            <div class="container mx-auto px-4">
+                <!-- Billing Toggle -->
+                <div class="max-w-xl mx-auto mb-16 flex flex-col items-center" data-aos="fade-up">
+                    <div class="flex items-center gap-4">
+                        <span class="text-lg font-semibold text-gray-600">Monthly</span>
+                        <div class="relative">
+                            <input type="checkbox" id="billing-toggle" class="toggle-checkbox absolute block w-10 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer transition-all duration-300"/>
+                            <label for="billing-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer w-20"></label>
+                        </div>
+                        <span class="text-lg font-semibold text-gray-600">Annual <span class="text-accent">(Save 20%)</span></span>
+                    </div>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Starter Plan -->
+                    <div class="pricing-card group" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect for small clinics with occasional staffing needs</p>
+                        <div class="price-tag">
+                            <span class="text-4xl font-bold">$</span>
+                            <span class="price-amount text-6xl font-bold">499</span>
+                            <span class="text-gray-600 self-end mb-2">/month</span>
+                        </div>
+                        <div class="space-y-6 mb-8">
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">SHIFT MANAGEMENT</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 20 shift requests per month</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>12-hour average fulfillment time</span>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">STAFF ACCESS</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Access to RNs, LPNs, CNAs, and CMAs</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                    <span class="text-gray-400">Priority matching algorithm</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">SUPPORT & TOOLS</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Basic reporting and analytics</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Email and chat support</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                    <span class="text-gray-400">Dedicated account manager</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                    <span class="text-gray-400">Custom integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/contact.html" class="block w-full py-4 px-8 text-center bg-white hover:bg-gray-50 text-dark font-semibold rounded-xl transition-all duration-300 border-2 border-accent/20 hover:border-accent">
+                            Start Free Trial
+                        </a>
+                    </div>
+
+                    <!-- Professional Plan -->
+                    <div class="pricing-card popular group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute top-4 right-4 bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium">
+                            Most Popular
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-6">Ideal for mid-sized healthcare facilities with regular staffing needs</p>
+                        <div class="price-tag">
+                            <span class="text-4xl font-bold">$</span>
+                            <span class="price-amount text-6xl font-bold">999</span>
+                            <span class="text-gray-600 self-end mb-2">/month</span>
+                        </div>
+                        <div class="space-y-6 mb-8">
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">SHIFT MANAGEMENT</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 50 shift requests per month</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>6-hour average fulfillment time</span>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">STAFF ACCESS</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Access to RNs, LPNs, CNAs, and CMAs</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Priority matching algorithm</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">SUPPORT & TOOLS</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Advanced reporting and analytics</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>24/7 priority support</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Dedicated account manager</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-times text-gray-400"></i>
+                                    <span class="text-gray-400">Custom integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/contact.html" class="block w-full py-4 px-8 text-center bg-accent hover:bg-accent/90 text-dark font-semibold rounded-xl transition-all duration-300 transform group-hover:scale-[1.02]">
+                            Start Free Trial
+                        </a>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card group" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">Comprehensive solution for large healthcare organizations</p>
+                        <div class="price-tag">
+                            <span class="text-4xl font-bold">$</span>
+                            <span class="price-amount text-6xl font-bold">2499</span>
+                            <span class="text-gray-600 self-end mb-2">/month</span>
+                        </div>
+                        <div class="space-y-6 mb-8">
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">SHIFT MANAGEMENT</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Unlimited shift requests</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>3-hour average fulfillment time</span>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">STAFF ACCESS</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Priority access to all professionals</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Advanced matching algorithm</span>
+                                </div>
+                            </div>
+
+                            <div class="feature-group">
+                                <h4 class="feature-group-title">SUPPORT & TOOLS</h4>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Custom reporting and analytics</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>24/7 VIP support</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Executive account manager</span>
+                                </div>
+                                <div class="feature-check">
+                                    <i class="fas fa-check"></i>
+                                    <span>Custom API integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/contact.html" class="block w-full py-4 px-8 text-center bg-white hover:bg-gray-50 text-dark font-semibold rounded-xl transition-all duration-300 border-2 border-accent/20 hover:border-accent">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Free Trial Notice -->
+                <div class="text-center mt-12 text-gray-600" data-aos="fade-up">
+                    All plans include a 14-day free trial. No credit card required to start.
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Frequently Asked Questions</h2>
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="text-xl font-semibold mb-3">Can I change plans later?</h3>
+                            <p class="text-gray-600">Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-xl font-semibold mb-3">What payment methods do you accept?</h3>
+                            <p class="text-gray-600">We accept all major credit cards, ACH transfers, and wire transfers for enterprise clients.</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="text-xl font-semibold mb-3">Is there a minimum contract period?</h3>
+                            <p class="text-gray-600">No, our services are month-to-month with no long-term commitments required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("components/header.html");
+            $("#footer-placeholder").load("components/footer.html");
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Handle billing toggle
+            const billingToggle = document.getElementById('billing-toggle');
+            const priceElements = document.querySelectorAll('.price-amount');
+            const monthlyPrices = ['499', '999', '2499'];
+            const annualPrices = ['399', '799', '1999'];
+
+            billingToggle.addEventListener('change', function() {
+                priceElements.forEach((element, index) => {
+                    element.textContent = this.checked ? annualPrices[index] : monthlyPrices[index];
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
