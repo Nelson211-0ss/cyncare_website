@@ -33,18 +33,18 @@
     <style>
         .bg-pattern {
             background-image: 
+                radial-gradient(circle at 100% 100%, #2af598 0%, transparent 25%),
+                radial-gradient(circle at 0% 0%, #242733 0%, transparent 20%),
                 linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
                 linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
                 linear-gradient(30deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
-                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733),
-                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377),
-                linear-gradient(60deg, #24273377 25%, transparent 25.5%, transparent 75%, #24273377 75%, #24273377);
+                linear-gradient(150deg, #242733 12%, transparent 12.5%, transparent 87%, #242733 87.5%, #242733);
             background-size: 80px 140px;
             background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
         }
 
         .form-input {
-            @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300;
+            @apply w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-300 bg-white/80 backdrop-blur-sm;
         }
 
         .form-label {
@@ -52,20 +52,84 @@
         }
 
         .contact-card {
-            @apply bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+            @apply bg-gradient-to-br from-white to-white/95 backdrop-blur-sm rounded-3xl p-10 shadow-2xl hover:shadow-3xl border-2 border-white transition-all duration-500 transform hover:-translate-y-2;
+            box-shadow: 0 25px 50px -12px rgba(42, 245, 152, 0.25);
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 35px 60px -15px rgba(42, 245, 152, 0.35);
+            border-color: rgba(42, 245, 152, 0.5);
+            transform: translateY(-16px);
+        }
+
+        .card-icon-wrapper {
+            @apply w-24 h-24 bg-gradient-to-br from-accent/30 to-accent/5 rounded-2xl flex items-center justify-center mb-8 group-hover:from-accent/40 group-hover:to-accent/10 transition-all duration-500 relative mx-auto;
+        }
+
+        .card-icon-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(to bottom right, rgba(42, 245, 152, 0.5), transparent);
+            border-radius: 1rem;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .contact-card:hover .card-icon-wrapper::before {
+            opacity: 1;
         }
 
         .gradient-text {
-            @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-500;
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-emerald-400 to-blue-500;
+            animation: gradient 8s ease-in-out infinite;
         }
 
-        .floating-animation {
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .custom-shape-divider-bottom-1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+            transform: rotateY(180deg);
+        }
+
+        .custom-shape-divider-bottom-1 .shape-fill {
+            fill: #FFFFFF;
+        }
+
+        .floating {
             animation: floating 3s ease-in-out infinite;
         }
 
         @keyframes floating {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(0.95); opacity: 0.5; }
         }
     </style>
 </head>
@@ -74,268 +138,172 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[80vh] flex items-center">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 bg-gradient-to-br from-dark to-gray-900"></div>
-        <div class="absolute inset-0 bg-pattern opacity-5"></div>
+    <section class="pt-24 pb-32 bg-gradient-to-br from-dark via-gray-900 to-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-15"></div>
+        <!-- Animated Circles -->
+        <div class="absolute top-20 left-20 w-[600px] h-[600px] bg-accent/10 rounded-full filter blur-3xl pulse-ring"></div>
+        <div class="absolute -bottom-20 right-20 w-[700px] h-[700px] bg-blue-500/10 rounded-full filter blur-3xl pulse-ring" style="animation-delay: 1s;"></div>
         
-        <!-- Decorative Blobs -->
-        <div class="absolute top-20 right-[10%] w-[500px] h-[500px] bg-accent/5 rounded-full filter blur-[100px]"></div>
-        <div class="absolute bottom-20 left-[10%] w-[500px] h-[500px] bg-accent/5 rounded-full filter blur-[100px]"></div>
-        
-        <!-- Floating Shapes -->
-        <div class="absolute top-20 left-[15%] w-24 h-24 rounded-2xl border-2 border-accent/20 rotate-12 floating-animation"></div>
-        <div class="absolute bottom-32 right-[15%] w-16 h-16 rounded-full border-2 border-accent/20 -rotate-12 floating-animation" style="animation-delay: -1s"></div>
-        <div class="absolute top-40 right-[25%] w-12 h-12 rounded-lg bg-accent/10 rotate-45 floating-animation" style="animation-delay: -2s"></div>
-
-        <!-- Main Content -->
-        <div class="container mx-auto px-4 pt-32 pb-20 relative z-10">
-            <div class="max-w-4xl mx-auto">
-                <!-- Top Badge -->
-                <div class="flex justify-center mb-8" data-aos="fade-down">
-                    <div class="inline-flex items-center bg-white/5 backdrop-blur-lg rounded-full px-6 py-2 border border-white/10">
-                        <div class="w-2 h-2 rounded-full bg-accent animate-pulse mr-3"></div>
-                        <span class="text-white/90 text-sm font-medium">24/7 Healthcare Staffing Support</span>
-                    </div>
-                </div>
-
-                <!-- Main Heading -->
-                <div class="text-center mb-12">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight" data-aos="fade-up">
-                        Let's Connect for
-                        <span class="relative inline-block px-4">
-                            <span class="relative z-10 text-accent">Better Healthcare</span>
-                            <div class="absolute inset-0 transform -rotate-2">
-                                <div class="absolute inset-0 bg-accent/10 rounded-lg"></div>
-                            </div>
-                        </span>
-                    </h1>
-                    <p class="text-xl text-white/80 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                        Whether you're seeking exceptional healthcare talent or exploring new opportunities, 
-                        we're here to make the perfect match for your needs.
-                    </p>
-                </div>
-
-                <!-- Contact Cards -->
-                <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                    <!-- Phone Card -->
-                    <a href="tel:1-800-CYNCARE" 
-                       class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden" 
-                       data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
-                        <div class="relative">
-                            <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform shadow-lg">
-                                <i class="fas fa-phone-alt text-dark text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-2">Call Us</h3>
-                            <p class="text-gray-600 font-medium mb-4">1-800-CYNCARE</p>
-                            <div class="flex items-center gap-2 text-sm text-dark/80">
-                                <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-                                Available 24/7
-                            </div>
-                            <div class="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-arrow-right text-accent"></i>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <!-- Email Card -->
-                    <a href="mailto:info@cyncare.com" 
-                       class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden" 
-                       data-aos="fade-up" data-aos-delay="300">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
-                        <div class="relative">
-                            <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform shadow-lg">
-                                <i class="fas fa-envelope text-dark text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-2">Email Us</h3>
-                            <p class="text-gray-600 font-medium mb-4">info@cyncare.com</p>
-                            <div class="flex items-center gap-2 text-sm text-dark/80">
-                                <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-                                Quick Response
-                            </div>
-                            <div class="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-arrow-right text-accent"></i>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <!-- Live Chat Card -->
-                    <a href="#live-chat" 
-                       class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden" 
-                       data-aos="fade-up" data-aos-delay="400">
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
-                        <div class="relative">
-                            <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform shadow-lg">
-                                <i class="fas fa-comments text-dark text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark mb-2">Live Chat</h3>
-                            <p class="text-gray-600 font-medium mb-4">Start Conversation</p>
-                            <div class="flex items-center gap-2 text-sm text-dark/80">
-                                <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-                                Instant Support
-                            </div>
-                            <div class="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-arrow-right text-accent"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="inline-block px-8 py-4 bg-accent/10 rounded-full text-accent font-semibold mb-8 backdrop-blur-sm border border-accent/20 text-lg" data-aos="fade-down">
+                    <i class="fas fa-comments-alt mr-2"></i>
+                    Get in Touch With Us
+                </span>
+                <h1 class="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight gradient-text" data-aos="fade-up">
+                    Let's Start a 
+                    <span class="text-accent">Conversation</span>
+                </h1>
+                <p class="text-2xl text-white/90 leading-relaxed mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Have questions about our healthcare staffing solutions? We're here to help you find the perfect match for your needs.
+                </p>
             </div>
         </div>
 
-        <!-- Wave Separator -->
-        <div class="absolute bottom-0 left-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
-                <path fill="#f9fafb" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <!-- Wave Shape Divider -->
+        <div class="custom-shape-divider-bottom-1">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
             </svg>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="py-20 bg-gray-50 relative">
+    <!-- Contact Info Cards -->
+    <section class="py-24 relative -mt-48">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-start">
-                    <!-- Left Side: Form -->
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden" data-aos="fade-right">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl"></div>
-                        <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Email Card -->
+                <div class="contact-card group floating" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon-wrapper">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                        <i class="fas fa-envelope text-4xl text-accent relative z-10"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-4 text-center">Email Us</h3>
+                    <p class="text-gray-600 mb-8 text-xl leading-relaxed text-center">For general inquiries and information about our services.</p>
+                    <div class="pt-6 border-t border-gray-100">
+                        <a href="mailto:info@cyncare.com" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold group text-xl w-full justify-center">
+                            info@cyncare.com
+                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                    </div>
+                </div>
 
-                        <div class="relative">
-                            <h2 class="text-3xl font-bold mb-2">Send Us a Message</h2>
-                            <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you promptly.</p>
+                <!-- Phone Card -->
+                <div class="contact-card group floating" style="animation-delay: 0.2s;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon-wrapper">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                        <i class="fas fa-phone-alt text-4xl text-accent relative z-10"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-4 text-center">Call Us</h3>
+                    <p class="text-gray-600 mb-8 text-xl leading-relaxed text-center">Our support team is available 24/7 to assist you.</p>
+                    <div class="pt-6 border-t border-gray-100">
+                        <a href="tel:1-800-CYNCARE" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold group text-xl w-full justify-center">
+                            1-800-CYNCARE
+                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                    </div>
+                </div>
 
-                            <form class="space-y-6">
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="form-group">
-                                        <label class="form-label">First Name</label>
-                                        <input type="text" class="form-input" placeholder="Enter your first name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Last Name</label>
-                                        <input type="text" class="form-input" placeholder="Enter your last name">
-                                    </div>
-                                </div>
+                <!-- Office Card -->
+                <div class="contact-card group floating" style="animation-delay: 0.4s;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon-wrapper">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                        <i class="fas fa-map-marker-alt text-4xl text-accent relative z-10"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-dark mb-4 text-center">Visit Us</h3>
+                    <p class="text-gray-600 mb-8 text-xl leading-relaxed text-center">Come by our office in Houston, Texas.</p>
+                    <div class="pt-6 border-t border-gray-100">
+                        <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold group text-xl w-full justify-center">
+                            Get Directions
+                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Email Address</label>
-                                        <input type="email" class="form-input" placeholder="Enter your email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Phone Number</label>
-                                        <input type="tel" class="form-input" placeholder="Enter your phone number">
-                                    </div>
-                                </div>
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold mb-6" data-aos="fade-down">
+                        Contact Form
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Send Us a Message</h2>
+                    <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                        Fill out the form below and we'll get back to you as soon as possible.
+                    </p>
+                </div>
 
+                <div class="bg-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl relative" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Decorative Elements -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+
+                    <form class="relative space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
                                 <div class="form-group">
-                                    <label class="form-label">I am a</label>
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-input" placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-input" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter your last name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Subject</label>
                                     <select class="form-input">
-                                        <option value="">Select your role</option>
-                                        <option value="facility">Healthcare Facility</option>
-                                        <option value="professional">Healthcare Professional</option>
-                                        <option value="partner">Potential Partner</option>
-                                        <option value="other">Other</option>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="staffing">Staffing Solutions</option>
+                                        <option value="partnership">Partnership Opportunities</option>
+                                        <option value="support">Technical Support</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
-                                    <label class="form-label">Message</label>
-                                    <textarea class="form-input min-h-[150px]" placeholder="How can we help you?"></textarea>
-                                </div>
-
-                                <div class="flex items-start mb-6">
-                                    <div class="flex items-center h-5">
-                                        <input type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-accent/20">
-                                    </div>
-                                    <label class="ml-2 text-sm text-gray-600">
-                                        I agree to the <a href="#" class="text-accent hover:text-accent/80">Privacy Policy</a> and <a href="#" class="text-accent hover:text-accent/80">Terms of Service</a>
-                                    </label>
-                                </div>
-
-                                <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-[1.02] focus:scale-[0.98] flex items-center justify-center gap-2 group">
-                                    Send Message
-                                    <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Additional Info -->
-                    <div class="space-y-8" data-aos="fade-left">
-                        <!-- Office Location -->
-                        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="flex items-start gap-6">
-                                <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-accent text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Visit Our Office</h3>
-                                    <p class="text-gray-600 mb-4">123 Healthcare Avenue<br>Houston, TX 77001</p>
-                                    <a href="https://maps.google.com" target="_blank" class="text-accent hover:text-accent/80 font-medium flex items-center gap-2 group">
-                                        Get Directions
-                                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
-                                    </a>
+                                    <label class="form-label">Best Time to Contact</label>
+                                    <select class="form-input">
+                                        <option value="">Select a time</option>
+                                        <option value="morning">Morning (9AM - 12PM)</option>
+                                        <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                                        <option value="evening">Evening (5PM - 8PM)</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Business Hours -->
-                        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="flex items-start gap-6">
-                                <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-clock text-accent text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Business Hours</h3>
-                                    <div class="space-y-2 text-gray-600">
-                                        <p class="flex justify-between">
-                                            <span>Monday - Friday:</span>
-                                            <span class="font-medium">9:00 AM - 6:00 PM</span>
-                                        </p>
-                                        <p class="flex justify-between">
-                                            <span>Saturday:</span>
-                                            <span class="font-medium">10:00 AM - 4:00 PM</span>
-                                        </p>
-                                        <p class="flex justify-between">
-                                            <span>Sunday:</span>
-                                            <span class="font-medium">Closed</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-input min-h-[150px] resize-none" placeholder="Type your message here..."></textarea>
                         </div>
 
-                        <!-- FAQ Preview -->
-                        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-6">Frequently Asked Questions</h3>
-                            <div class="space-y-4">
-                                <div class="p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
-                                    <h4 class="font-medium flex items-center justify-between">
-                                        How quickly can I find healthcare staff?
-                                        <i class="fas fa-chevron-right text-accent"></i>
-                                    </h4>
-                                </div>
-                                <div class="p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
-                                    <h4 class="font-medium flex items-center justify-between">
-                                        What credentials do you verify?
-                                        <i class="fas fa-chevron-right text-accent"></i>
-                                    </h4>
-                                </div>
-                                <div class="p-4 bg-gray-50 rounded-xl cursor-pointer hover:bg-gray-100 transition-colors">
-                                    <h4 class="font-medium flex items-center justify-between">
-                                        How does the hiring process work?
-                                        <i class="fas fa-chevron-right text-accent"></i>
-                                    </h4>
-                                </div>
+                        <div class="flex items-start mb-6">
+                            <div class="flex items-center h-5">
+                                <input type="checkbox" class="w-5 h-5 border-2 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-accent/20 checked:bg-accent checked:border-accent">
                             </div>
-                            <a href="/faq.html" class="inline-flex items-center text-accent hover:text-accent/80 font-medium mt-6 group">
-                                View All FAQs
-                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
+                            <label class="ml-3 text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-accent hover:text-accent/80 font-medium">Privacy Policy</a> and <a href="#" class="text-accent hover:text-accent/80 font-medium">Terms of Service</a>
+                            </label>
                         </div>
-                    </div>
+
+                        <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-dark font-semibold px-8 py-4 rounded-xl transition-all transform hover:scale-[1.02] focus:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-accent/25">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -344,29 +312,27 @@
     <!-- Map Section -->
     <section class="py-20 bg-white relative overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="bg-gradient-to-br from-dark to-gray-900 rounded-3xl p-12 relative overflow-hidden" data-aos="zoom-in">
-                    <!-- Decorative Elements -->
-                    <div class="absolute inset-0 bg-pattern opacity-5"></div>
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl"></div>
-                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl"></div>
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold mb-6" data-aos="fade-down">
+                        Our Location
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Visit Our Office</h2>
+                    <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                        Come see us at our Houston headquarters
+                    </p>
+                </div>
 
-                    <div class="relative text-center mb-12">
-                        <h2 class="text-3xl font-bold text-white mb-4">Find Us on the Map</h2>
-                        <p class="text-white/80 max-w-2xl mx-auto">
-                            Located in the heart of Houston's medical district, we're easily accessible and ready to serve your healthcare staffing needs.
-                        </p>
-                    </div>
-
-                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <div class="bg-white rounded-3xl p-6 shadow-xl overflow-hidden" data-aos="fade-up">
+                    <div class="rounded-2xl overflow-hidden">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.480714751451!2d-95.36790378489242!3d29.760324381989347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf2676a9d89b%3A0x3ea576e8c1e9874c!2sDowntown%20Houston%2C%20Houston%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1625764245783!5m2!1sen!2s" 
                             width="100%" 
-                            height="500" 
+                            height="450" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy"
-                            class="w-full"
+                            class="rounded-xl"
                         ></iframe>
                     </div>
                 </div>
