@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore CynCare's comprehensive healthcare staffing solutions - from temporary staffing to permanent placement">
+    <meta name="description" content="Explore CynCare's comprehensive healthcare staffing solutions including permanent placement, temporary staffing, travel nursing, and more">
     <title>Our Services | CynCare Healthcare Staffing</title>
     
     <!-- Tailwind CSS -->
@@ -46,6 +46,15 @@
         .service-card {
             @apply bg-white rounded-2xl p-8 shadow-sm border border-dark/5 hover:shadow-lg transition-all duration-300;
         }
+
+        /* Add styles for service images */
+        .relative img[alt*="Permanent Placement"],
+        .relative img[alt*="Temporary Staffing"],
+        .relative img[alt*="Travel Nursing"] {
+            max-height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -57,237 +66,310 @@
         <section class="relative min-h-[60vh] flex items-center">
             <!-- Background Image with Overlay -->
             <div class="absolute inset-0 z-0">
-                <img src="images/services-hero.jpg" alt="Healthcare Services" class="w-full h-full object-cover">
+                <img src="images/background/backgorund1.jpg" alt="Healthcare Services" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/90 to-dark/80"></div>
                 <div class="absolute inset-0 bg-pattern opacity-10"></div>
             </div>
 
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center text-white">
+                    <div class="inline-block bg-white/10 px-6 py-2 rounded-full mb-6" data-aos="fade-up">
+                        <span class="text-accent font-semibold">Our Services</span>
+                    </div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
-                        Healthcare Staffing
-                        <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Solutions</span>
+                        Comprehensive Healthcare
+                        <span class="text-accent bg-clip-text text-transparent bg-gradient-to-r from-accent to-green-400">Staffing Solutions</span>
                     </h1>
                     <p class="text-xl text-white/80 leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="100">
-                        Comprehensive staffing services tailored to meet the unique needs of healthcare facilities and professionals.
+                        Tailored staffing solutions to meet the unique needs of healthcare facilities and professionals
                     </p>
-                    <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#services" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
-                            Explore Services
-                            <i class="fas fa-arrow-down ml-2"></i>
-                        </a>
-                        <a href="/contact.html" class="btn-secondary bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
-                            Get Started
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services Overview -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Our Services</h2>
-                    <p class="text-xl text-dark/70 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                        Choose the staffing solution that best fits your healthcare facility's needs
-                    </p>
-                </div>
-                
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Permanent Placement -->
-                    <div class="service-card group" data-aos="fade-up">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-dark/5 hover:-translate-y-2 transition-all duration-300">
-                            <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                                <i class="fas fa-user-md text-3xl text-accent"></i>
+                    <!-- Service Card 1 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-gray-50 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl relative overflow-hidden h-full">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative">
+                                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fas fa-user-md text-2xl text-accent"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-dark">Permanent Placement</h3>
+                                <p class="text-dark/70 mb-6">
+                                    Find your perfect long-term match with our comprehensive permanent placement services.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Thorough candidate screening</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Cultural fit assessment</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Long-term success focus</span>
+                                    </li>
+                                </ul>
+                                <a href="/contact.html" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold transition-colors">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Permanent Placement</h3>
-                            <div class="flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl font-bold">$2,500</span>
-                                <span class="text-dark/60">base fee</span>
-                            </div>
-                            <ul class="space-y-3 mb-8">
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Full-time healthcare professional recruitment</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Thorough candidate screening and interviews</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Background checks and credential verification</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">90-day placement guarantee</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Ongoing support during onboarding</span>
-                                </li>
-                            </ul>
-                            <a href="/contact" class="block w-full bg-accent hover:bg-accent/90 text-dark font-semibold py-4 px-8 rounded-lg transition-all transform group-hover:scale-105 text-center">
-                                Get Started
-                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Temporary Staffing -->
-                    <div class="service-card group" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-dark/5 hover:-translate-y-2 transition-all duration-300">
-                            <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                                <i class="fas fa-clock text-3xl text-accent"></i>
+                    <!-- Service Card 2 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-gray-50 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl relative overflow-hidden h-full">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative">
+                                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fas fa-clock text-2xl text-accent"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-dark">Temporary Staffing</h3>
+                                <p class="text-dark/70 mb-6">
+                                    Flexible staffing solutions to meet your immediate and short-term needs.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Rapid response placement</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Pre-screened professionals</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Flexible scheduling</span>
+                                    </li>
+                                </ul>
+                                <a href="/contact.html" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold transition-colors">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Temporary Staffing</h3>
-                            <div class="flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl font-bold">$65</span>
-                                <span class="text-dark/60">per hour</span>
-                            </div>
-                            <ul class="space-y-3 mb-8">
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Flexible scheduling options</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Pre-screened healthcare professionals</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Quick replacement if needed</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">24/7 support available</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Weekly billing cycles</span>
-                                </li>
-                            </ul>
-                            <a href="/contact" class="block w-full bg-accent hover:bg-accent/90 text-dark font-semibold py-4 px-8 rounded-lg transition-all transform group-hover:scale-105 text-center">
-                                Get Started
-                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Travel Nursing -->
-                    <div class="service-card group" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg border border-dark/5 hover:-translate-y-2 transition-all duration-300">
-                            <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                                <i class="fas fa-plane text-3xl text-accent"></i>
+                    <!-- Service Card 3 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-gray-50 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl relative overflow-hidden h-full">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative">
+                                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fas fa-plane text-2xl text-accent"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-dark">Travel Nursing</h3>
+                                <p class="text-dark/70 mb-6">
+                                    Exciting opportunities for nurses to work in different locations while advancing their careers.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Competitive pay packages</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Housing assistance</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-accent"></i>
+                                        <span class="text-dark/70">Travel reimbursement</span>
+                                    </li>
+                                </ul>
+                                <a href="/contact.html" class="inline-flex items-center text-accent hover:text-accent/80 font-semibold transition-colors">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Travel Nursing</h3>
-                            <div class="flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl font-bold">$85</span>
-                                <span class="text-dark/60">per hour</span>
-                            </div>
-                            <ul class="space-y-3 mb-8">
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">13-week minimum assignments</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Housing stipend included</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Travel reimbursement</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">Comprehensive benefits package</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fas fa-check-circle text-accent mt-1"></i>
-                                    <span class="text-dark/70">24/7 clinical support</span>
-                                </li>
-                            </ul>
-                            <a href="/contact" class="block w-full bg-accent hover:bg-accent/90 text-dark font-semibold py-4 px-8 rounded-lg transition-all transform group-hover:scale-105 text-center">
-                                Get Started
-                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Process Section -->
-        <section class="py-20 bg-gray-50">
+        <!-- Detailed Services Section -->
+        <section class="py-20 bg-gray-50" id="services-detail">
             <div class="container mx-auto px-4">
+                <!-- Permanent Placement -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-20" id="permanent">
+                    <div class="space-y-6" data-aos="fade-right">
+                        <div class="inline-block bg-accent/10 px-4 py-2 rounded-full">
+                            <span class="text-dark font-semibold">Permanent Placement</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark">Find Your Perfect Match</h2>
+                        <p class="text-dark/70 leading-relaxed">
+                            Our permanent placement service is designed to connect healthcare facilities with qualified professionals for long-term success. We understand that finding the right fit is crucial for both employers and candidates.
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-search text-xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Thorough Screening</h3>
+                                <p class="text-dark/70 text-sm">Comprehensive background checks and credential verification</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-handshake text-xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Perfect Match</h3>
+                                <p class="text-dark/70 text-sm">Culture fit and skill alignment assessment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative" data-aos="fade-left">
+                        <div class="absolute inset-0 bg-accent/20 rounded-3xl blur-2xl transform rotate-6"></div>
+                        <img src="images/otherimages/image3.jpg" alt="Permanent Placement" class="relative rounded-3xl shadow-xl">
+                    </div>
+                </div>
+
+                <!-- Temporary Staffing -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-20" id="temporary">
+                    <div class="relative order-2 lg:order-1" data-aos="fade-right">
+                        <div class="absolute inset-0 bg-accent/20 rounded-3xl blur-2xl transform -rotate-6"></div>
+                        <img src="images/otherimages/image4.jpg" alt="Temporary Staffing" class="relative rounded-3xl shadow-xl">
+                    </div>
+                    <div class="space-y-6 order-1 lg:order-2" data-aos="fade-left">
+                        <div class="inline-block bg-accent/10 px-4 py-2 rounded-full">
+                            <span class="text-dark font-semibold">Temporary Staffing</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark">Flexible Staffing Solutions</h2>
+                        <p class="text-dark/70 leading-relaxed">
+                            Our temporary staffing services provide healthcare facilities with qualified professionals to maintain optimal staffing levels during peak periods, vacations, or unexpected absences.
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-bolt text-xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Quick Response</h3>
+                                <p class="text-dark/70 text-sm">Rapid placement of qualified professionals</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-calendar-alt text-xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Flexible Terms</h3>
+                                <p class="text-dark/70 text-sm">Customizable duration and scheduling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel Nursing -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-20" id="travel">
+                    <div class="space-y-6" data-aos="fade-right">
+                        <div class="inline-block bg-accent/10 px-4 py-2 rounded-full">
+                            <span class="text-dark font-semibold">Travel Nursing</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark">Adventure Meets Career Growth</h2>
+                        <p class="text-dark/70 leading-relaxed">
+                            Our travel nursing program offers exciting opportunities for nurses to explore new locations while advancing their careers. We provide comprehensive support throughout the entire journey.
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-home text-xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Housing Support</h3>
+                                <p class="text-dark/70 text-sm">Furnished housing or stipend options</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                                    <i class="fas fa-dollar-sign text-xl text-accent"></i>
+                                </div>
+                                <h3 class="font-semibold mb-2">Great Benefits</h3>
+                                <p class="text-dark/70 text-sm">Competitive pay and comprehensive benefits</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative" data-aos="fade-left">
+                        <div class="absolute inset-0 bg-accent/20 rounded-3xl blur-2xl transform rotate-6"></div>
+                        <img src="images/otherimages/image5.jpg" alt="Travel Nursing" class="relative rounded-3xl shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-20 bg-gradient-to-br from-dark to-gray-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-5"></div>
+            <div class="container mx-auto px-4 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Our Process</h2>
-                    <p class="text-xl text-dark/70" data-aos="fade-up" data-aos-delay="100">
-                        How we ensure the perfect match between healthcare professionals and facilities
+                    <div class="inline-block bg-white/10 px-4 py-2 rounded-full mb-6" data-aos="fade-up">
+                        <span class="text-accent font-semibold">Why Choose Us</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up">The CynCare Advantage</h2>
+                    <p class="text-xl text-white/80" data-aos="fade-up" data-aos-delay="100">
+                        What sets us apart in healthcare staffing
                     </p>
                 </div>
+
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="relative" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-card relative z-10">
-                            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                                <span class="text-2xl font-bold text-accent">01</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">Initial Consultation</h3>
-                            <p class="text-dark/70">Understanding your specific needs and requirements</p>
+                    <div class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-certificate text-2xl text-accent"></i>
                         </div>
-                        <div class="hidden lg:block absolute top-1/2 right-0 w-full h-1 bg-accent/20 transform translate-x-1/2"></div>
+                        <h3 class="text-xl font-bold mb-4 text-white">Quality Assurance</h3>
+                        <p class="text-white/70">Rigorous screening and credential verification process</p>
                     </div>
-                    <div class="relative" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-card relative z-10">
-                            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                                <span class="text-2xl font-bold text-accent">02</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">Candidate Screening</h3>
-                            <p class="text-dark/70">Thorough evaluation of qualifications and experience</p>
+
+                    <div class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-clock text-2xl text-accent"></i>
                         </div>
-                        <div class="hidden lg:block absolute top-1/2 right-0 w-full h-1 bg-accent/20 transform translate-x-1/2"></div>
+                        <h3 class="text-xl font-bold mb-4 text-white">24/7 Support</h3>
+                        <p class="text-white/70">Round-the-clock assistance for our clients and professionals</p>
                     </div>
-                    <div class="relative" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-card relative z-10">
-                            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                                <span class="text-2xl font-bold text-accent">03</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">Perfect Match</h3>
-                            <p class="text-dark/70">Connecting the right professionals with the right opportunities</p>
+
+                    <div class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-2xl text-accent"></i>
                         </div>
-                        <div class="hidden lg:block absolute top-1/2 right-0 w-full h-1 bg-accent/20 transform translate-x-1/2"></div>
+                        <h3 class="text-xl font-bold mb-4 text-white">Industry Expertise</h3>
+                        <p class="text-white/70">Deep understanding of healthcare staffing needs</p>
                     </div>
-                    <div class="relative" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-card relative z-10">
-                            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                                <span class="text-2xl font-bold text-accent">04</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">Ongoing Support</h3>
-                            <p class="text-dark/70">Continuous assistance throughout the placement</p>
+
+                    <div class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-handshake text-2xl text-accent"></i>
                         </div>
+                        <h3 class="text-xl font-bold mb-4 text-white">Partnership Focus</h3>
+                        <p class="text-white/70">Building long-term relationships with our clients</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-br from-dark to-gray-900 relative overflow-hidden">
-            <div class="absolute inset-0 bg-pattern opacity-5"></div>
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center max-w-3xl mx-auto" data-aos="zoom-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-                    <p class="text-xl text-white/80 mb-8">Let us help you find the perfect healthcare staffing solution</p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="/contact.html" class="btn-primary bg-accent hover:bg-accent/90 text-dark px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
-                            Contact Us
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                        <a href="/jobs.html" class="btn-secondary bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
-                            View Jobs
-                            <i class="fas fa-search ml-2"></i>
-                        </a>
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="bg-gray-50 rounded-3xl p-12 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-50"></div>
+                    <div class="relative z-10 text-center max-w-3xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6" data-aos="fade-up">Ready to Get Started?</h2>
+                        <p class="text-xl text-dark/70 mb-8" data-aos="fade-up" data-aos-delay="100">
+                            Let's discuss how we can help you meet your healthcare staffing needs
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                            <a href="/contact.html" class="bg-dark hover:bg-dark/90 text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
+                                Contact Us
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="/jobs.html" class="bg-accent hover:bg-accent/90 text-dark px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-semibold">
+                                View Opportunities
+                                <i class="fas fa-search ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
